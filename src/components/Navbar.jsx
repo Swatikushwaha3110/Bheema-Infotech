@@ -12,7 +12,7 @@ const Navbar = () => {
         <div className="container mx-auto flex justify-between items-center px-6 py-4">
           {/* Logo */}
           <div className="text-2xl font-bold">
-            <Link to="/home" className="flex items-center gap-1 hover:text-blue-300 transition">
+            <Link to="/" className="flex items-center gap-1 hover:text-blue-300 transition">
               Bheema<span className="text-blue-400">Infotech</span>
             </Link>
           </div>
@@ -20,13 +20,13 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6 items-center">
             <Link
-              to="/home"
+              to="/"
               className={`relative px-1 py-2 hover:text-blue-400 transition ${
-                location.pathname === "/home" ? "text-orange-400" : ""
+                location.pathname === "/" ? "text-orange-400" : ""
               }`}
             >
               Home
-              {location.pathname === "/home" && (
+              {location.pathname === "/" && (
                 <span className="absolute left-0 bottom-0 w-full h-1 bg-orange-400 rounded-full"></span>
               )}
             </Link>
@@ -142,7 +142,7 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden bg-blue-900 px-6 py-4 flex flex-col space-y-2">
-            {["/home","/about","/services","/engagement","/technicalstack","/portfolio","/blog","/careers","/contact"].map((path, idx) => (
+            {["/","/about","/services","/engagement","/technicalstack","/portfolio","/blog","/careers","/contact"].map((path, idx) => (
               <Link
                 key={idx}
                 to={path}

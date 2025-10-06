@@ -1,7 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
 
 const Contact = () => {
+  // Form state
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [responseMsg, setResponseMsg] = useState("");
+
+  // Handle input change
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Handle form submit
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setResponseMsg("");
+
+    try {
+      const res = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        setResponseMsg(data.success);
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setResponseMsg(data.error || "Something went wrong!");
+      }
+    } catch (error) {
+      console.log(error);
+      setResponseMsg("Server error! Please try again later.");
+    }
+
+    setLoading(false);
+  };
+
   return (
     <div className="bg-gray-50 text-gray-800 min-h-screen py-16">
       {/* Header */}
@@ -18,16 +62,16 @@ const Contact = () => {
       <section className="container mx-auto px-6 md:px-12 lg:px-24 grid md:grid-cols-2 gap-12">
         {/* Contact Info */}
         <div className="space-y-6">
-          {/* Location */}
           <div className="group bg-white p-8 rounded-xl shadow hover:shadow-xl transition duration-300 flex items-center gap-6">
             <MdLocationOn className="text-blue-600 text-4xl transition duration-300 group-hover:text-blue-700" />
             <div>
               <h3 className="text-2xl font-semibold mb-2 text-blue-900">Location</h3>
-              <p className="text-gray-700">302 A, Rajat Complex, 18, Kibe Compound, Madhumilan Square, In Front of Dawa Bazar, Indore, Madhya Pradesh 452001</p>
+              <p className="text-gray-700">
+                302 A, Rajat Complex, 18, Kibe Compound, Madhumilan Square, In Front of Dawa Bazar, Indore, Madhya Pradesh 452001
+              </p>
             </div>
           </div>
 
-          {/* Email */}
           <div className="group bg-white p-8 rounded-xl shadow hover:shadow-xl transition duration-300 flex items-center gap-6">
             <MdEmail className="text-blue-600 text-4xl transition duration-300 group-hover:text-blue-700" />
             <div>
@@ -36,7 +80,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Phone */}
           <div className="group bg-white p-8 rounded-xl shadow hover:shadow-xl transition duration-300 flex items-center gap-6">
             <MdPhone className="text-blue-600 text-4xl transition duration-300 group-hover:text-blue-700" />
             <div>
@@ -48,45 +91,69 @@ const Contact = () => {
 
         {/* Contact Form */}
         <div className="bg-white p-8 rounded-xl shadow-xl">
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
               <label className="block mb-2 font-medium text-gray-700">Name</label>
               <input
                 type="text"
+                name="name"
                 placeholder="Your Name"
+                value={formData.name}
+                onChange={handleChange}
                 className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
               />
             </div>
             <div>
               <label className="block mb-2 font-medium text-gray-700">Email</label>
               <input
                 type="email"
+                name="email"
                 placeholder="Your Email"
+                value={formData.email}
+                onChange={handleChange}
                 className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
               />
             </div>
             <div>
               <label className="block mb-2 font-medium text-gray-700">Subject</label>
               <input
                 type="text"
+                name="subject"
                 placeholder="Subject"
+                value={formData.subject}
+                onChange={handleChange}
                 className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
               />
             </div>
             <div>
               <label className="block mb-2 font-medium text-gray-700">Message</label>
               <textarea
                 rows="5"
+                name="message"
                 placeholder="Your Message"
+                value={formData.message}
+                onChange={handleChange}
                 className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
               ></textarea>
             </div>
+
             <button
               type="submit"
-              className="w-full bg-blue-700 text-white py-3 rounded-md font-semibold hover:bg-blue-800 transition"
+              disabled={loading}
+              className={`w-full py-3 rounded-md font-semibold transition ${
+                loading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-700 hover:bg-blue-800 text-white"
+              }`}
             >
-              Send Message
+              {loading ? "Sending..." : "Send Message"}
             </button>
+
+            {responseMsg && (
+              <p className="mt-4 text-center text-green-600 font-medium">{responseMsg}</p>
+            )}
           </form>
         </div>
       </section>
