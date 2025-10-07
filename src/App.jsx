@@ -11,6 +11,12 @@ import PortfolioPage from "./pages/PortfolioPage";
 import ContactPage from "./pages/ContactPage";
 import BlogPage from "./pages/BlogPage";
 import CareersPage from "./pages/CareersPage";
+import ItPage from "./pages/ItPage";
+import InternshipPage from "./pages/InternshipPage";
+import NonItPage from "./pages/NonitPage";
+import ApplyIt from "./pages/Applyit";
+import ApplyNonIt from "./pages/ApplyNonIt";
+import ApplyInternShip from "./pages/ApplyInternShip";
 
 function App() {
   return (
@@ -25,7 +31,15 @@ function App() {
          <Route path="/portfolio"element={<PortfolioPage/>}/>
          <Route path="/contact"element={<ContactPage/>}/>
          <Route path="/blog"element={<BlogPage/>}/>
-         <Route path="/careers"element={<CareersPage/>}/>
+          <Route path="/careers" element={<CareersPage />} /> {/* default page */}
+        <Route path="/careers/:filter" element={<CareersPage />} />
+         <Route path="/it"element={<ItPage/>}/>
+         <Route path="/nonit"element={<NonItPage/>}/>
+         <Route path="/internship"element={<InternshipPage/>}/>
+         <Route path="/apply/it" element={<ApplyIt />} />
+         <Route path="/apply/nonit" element={<ApplyNonIt />} />
+         <Route path="/apply/internship" element={<ApplyInternShip/>} />
+
        </Routes>
        <Footer/>
        </Router>

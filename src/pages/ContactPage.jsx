@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
 
 const Contact = () => {
-  // Form state
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -11,18 +10,18 @@ const Contact = () => {
   });
 
   const [loading, setLoading] = useState(false);
-  const [responseMsg, setResponseMsg] = useState("");
+  const [successMsg, setSuccessMsg] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
 
-  // Handle input change
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle form submit
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setResponseMsg("");
+    setSuccessMsg("");
+    setErrorMsg("");
 
     try {
       const res = await fetch("http://localhost:5000/api/contact", {
@@ -33,14 +32,14 @@ const Contact = () => {
 
       const data = await res.json();
       if (res.ok) {
-        setResponseMsg(data.success);
+        setSuccessMsg(data.success);
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
-        setResponseMsg(data.error || "Something went wrong!");
+        setErrorMsg(data.error || "Something went wrong!");
       }
-    } catch (error) {
-      console.log(error);
-      setResponseMsg("Server error! Please try again later.");
+    } catch (err) {
+      console.log(err);
+      setErrorMsg("Server error! Please try again later.");
     }
 
     setLoading(false);
@@ -104,6 +103,7 @@ const Contact = () => {
                 required
               />
             </div>
+
             <div>
               <label className="block mb-2 font-medium text-gray-700">Email</label>
               <input
@@ -116,6 +116,7 @@ const Contact = () => {
                 required
               />
             </div>
+
             <div>
               <label className="block mb-2 font-medium text-gray-700">Subject</label>
               <input
@@ -128,6 +129,7 @@ const Contact = () => {
                 required
               />
             </div>
+
             <div>
               <label className="block mb-2 font-medium text-gray-700">Message</label>
               <textarea
@@ -151,9 +153,9 @@ const Contact = () => {
               {loading ? "Sending..." : "Send Message"}
             </button>
 
-            {responseMsg && (
-              <p className="mt-4 text-center text-green-600 font-medium">{responseMsg}</p>
-            )}
+            {/* Success & Error messages */}
+            {successMsg && <p className="mt-4 text-center text-green-600 font-medium">{successMsg}</p>}
+            {errorMsg && <p className="mt-4 text-center text-red-600 font-medium">{errorMsg}</p>}
           </form>
         </div>
       </section>
