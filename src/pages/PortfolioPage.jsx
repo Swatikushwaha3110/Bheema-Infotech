@@ -13,7 +13,7 @@ const Portfolio = () => {
   ];
 
   return (
-    <div className="bg-gray-50 text-gray-800 py-16">
+    <div className="bg-gray-50 text-gray-800 pt-8">
       <section className="text-center mb-12 px-6 md:px-12 lg:px-24">
         <h1 className="text-4xl md:text-5xl font-bold text-blue-900 mb-4">
           Our <span className="text-blue-600">Portfolio</span>

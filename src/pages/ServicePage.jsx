@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import img1 from "../assets/Images/onhire.svg";
 import img2 from "../assets/Images/fixed_cost.svg";
 import img3 from "../assets/Images/24-hours.svg";
+import service from "../assets/Images/serimg.avif"
 
 const Services = () => {
   const services = [
@@ -9,76 +11,103 @@ const Services = () => {
       title: "Web Development",
       image: img1,
       description:
-        "Custom websites with responsive design, optimized performance, and modern technologies.",
+        "Custom websites with responsive design, optimized performance, and modern technologies to bring your brand online.",
     },
     {
       title: "Mobile App Development",
       image: img2,
       description:
-        "Native and cross-platform mobile apps that engage users and drive business growth.",
+        "Native and cross-platform mobile apps that engage users, streamline workflows, and accelerate business growth.",
     },
     {
       title: "Digital Marketing",
       image: img3,
       description:
-        "SEO, social media, and content marketing strategies to increase your online visibility.",
+        "SEO, social media, and content marketing strategies that boost visibility and drive measurable results.",
     },
   ];
 
   return (
-    <div className="bg-gray-50 text-gray-800">
+    <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
       {/* Hero Section */}
-      <section className="bg-blue-50 py-20 text-center">
-        <div className="container mx-auto px-6 md:px-12 lg:px-24">
-          <h1 className="text-4xl md:text-5xl font-bold text-blue-900 mb-4">
-            Our <span className="text-blue-600">Services</span>
+      <section className="py-24 text-center">
+        <div className="max-w-5xl mx-auto px-6">
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+            Our <span className="text-yellow-300">Services</span>
           </h1>
-          <p className="text-gray-700 max-w-3xl mx-auto text-lg md:text-xl">
-            We offer a wide range of IT services to help your business grow, innovate, and stay ahead in the digital world.
+          <p className="text-lg md:text-xl text-gray-100 leading-relaxed">
+            Delivering end-to-end IT solutions that empower your business to thrive in
+            the digital world.
           </p>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-20">
-        <div className="container mx-auto px-6 md:px-12 lg:px-24 grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      {/* Services Section */}
+      <section className="pt-20 pb-16 bg-white text-gray-900 rounded-t-[3rem]">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-12">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition transform hover:-translate-y-2"
+              className="group h-96 bg-white p-10 rounded-3xl shadow-xl hover:scale-105 hover:shadow-2xl hover:bg-blue-600 transition-all duration-500 flex flex-col items-center text-center"
             >
-              {/* Image */}
               <img
                 src={service.image}
                 alt={service.title}
-                className="w-32 h-32 mb-6 object-contain"
+                className="w-28 h-28 mb-6 object-contain"
               />
-
-              {/* Title */}
-              <h3 className="text-xl font-semibold text-blue-700 mb-2">{service.title}</h3>
-
-              {/* Description */}
-              <p className="text-gray-700">{service.description}</p>
+              <h3 className="text-gray-900 text-2xl font-bold mb-3 group-hover:text-white">{service.title}</h3>
+              <p className="text-lg leading-relaxed text-gray-900 group-hover:text-white">
+                {service.description}
+              </p>
+              <div className="w-16 h-1 bg-yellow-400 mt-6 rounded-full"></div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="bg-blue-50 py-20 text-center">
-        <div className="container mx-auto px-6 md:px-12 lg:px-24">
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">
-            Ready to Start Your Project?
+      {/* Why Choose Us / Value Section */}
+      <section className="pb-20 bg-white text-gray-900">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+         <img
+              src={service}
+           alt="Our Expertise"
+            className="rounded-3xl shadow-2xl w-full h-[450px] object-cover hover:scale-105 transition-transform duration-500"
+            />
+          <div className="space-y-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-blue-900">
+              We Deliver Quality & Innovation
+            </h2>
+            <p className="text-gray-950 text-lg font-bold leading-relaxed">
+              Every service we offer is built on a foundation of innovation, integrity,
+              and excellence. Our experts combine creativity with cutting-edge technology
+              to provide solutions that truly make a difference.
+            </p>
+            <Link
+              to="/contact"
+              className="inline-block bg-blue-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-yellow-400 hover:text-gray-900 transition"
+            >
+              Let’s Connect
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 text-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+        <div className="max-w-3xl mx-auto px-6">
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-6">
+            Ready to Transform Your Digital Presence?
           </h2>
-          <p className="text-gray-700 mb-10 max-w-2xl mx-auto text-lg">
-            Get in touch with us and let our expert team deliver the perfect IT solution for your business.
+          <p className="text-gray-100 mb-10 text-lg">
+            Partner with Bheema Infotech to build dynamic, scalable, and future-ready
+            digital solutions for your business.
           </p>
-          <a
-            href="#contact"
-            className="inline-block bg-blue-600 text-white px-10 py-3 rounded-lg font-semibold hover:bg-orange-600 transition"
+          <Link
+            to="/contact"
+            className="inline-block bg-yellow-400 text-gray-900 px-12 py-4 rounded-xl font-bold hover:bg-yellow-300 transition"
           >
             Contact Us Today
-          </a>
+          </Link>
         </div>
       </section>
     </div>
