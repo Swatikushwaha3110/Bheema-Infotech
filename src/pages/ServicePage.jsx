@@ -1,29 +1,51 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import img1 from "../assets/Images/onhire.svg";
-import img2 from "../assets/Images/fixed_cost.svg";
-import img3 from "../assets/Images/24-hours.svg";
-import service from "../assets/Images/serimg.avif"
+import { FaCode, FaUsersCog } from "react-icons/fa";
+import {
+  MdOutlineBusinessCenter,
+  MdOutlineCampaign,
+  MdOutlinePhoneIphone,
+  MdOutlineVerified,
+} from "react-icons/md";
+import service from "../assets/Images/serimg.avif";
 
 const Services = () => {
   const services = [
     {
       title: "Web Development",
-      image: img1,
+      icon: <FaCode />,
       description:
         "Custom websites with responsive design, optimized performance, and modern technologies to bring your brand online.",
     },
     {
       title: "Mobile App Development",
-      image: img2,
+      icon: <MdOutlinePhoneIphone />,
       description:
         "Native and cross-platform mobile apps that engage users, streamline workflows, and accelerate business growth.",
     },
     {
       title: "Digital Marketing",
-      image: img3,
+      icon: <MdOutlineCampaign />,
       description:
         "SEO, social media, and content marketing strategies that boost visibility and drive measurable results.",
+    },
+    {
+      title: "IT Staff Augmentation",
+      icon: <FaUsersCog />,
+      description:
+        "Scale up your tech expertise and enhance your team's capabilities with our robust IT Staff Augmentation services.",
+    },
+    {
+      title: "Enterprise Portal Development",
+      icon: <MdOutlineBusinessCenter />,
+      description:
+        "We offer enterprise solutions that fulfill all business needs with highly responsive and distinct features.",
+    },
+    {
+      title: "Quality Assurance & Testing",
+      icon: <MdOutlineVerified />,
+      description:
+        "Experienced development and testing team delivering quality-assured products, using A/B and multivariate testing to ensure smooth application performance.",
     },
   ];
 
@@ -48,47 +70,20 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group h-96 bg-white p-10 rounded-3xl shadow-xl hover:scale-105 hover:shadow-2xl hover:bg-blue-600 transition-all duration-500 flex flex-col items-center text-center"
+              className="group bg-white p-8 rounded-3xl shadow-xl hover:scale-105 hover:shadow-2xl hover:bg-blue-600 transition-all duration-500 flex flex-col items-center text-center min-h-[300px]"
             >
-              <img
-                src={service.image}
-                alt={service.title}
-                className="w-28 h-28 mb-6 object-contain"
-              />
-              <h3 className="text-gray-900 text-2xl font-bold mb-3 group-hover:text-white">{service.title}</h3>
+              <div className="mb-6 text-6xl text-yellow-500 group-hover:text-white">
+                {service.icon}
+              </div>
+              <h3 className="text-gray-900 text-2xl font-bold mb-3 group-hover:text-white">
+                {service.title}
+              </h3>
               <p className="text-lg leading-relaxed text-gray-900 group-hover:text-white">
                 {service.description}
               </p>
               <div className="w-16 h-1 bg-yellow-400 mt-6 rounded-full"></div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* Why Choose Us / Value Section */}
-      <section className="pb-20 bg-white text-gray-900">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
-         <img
-              src={service}
-           alt="Our Expertise"
-            className="rounded-3xl shadow-2xl w-full h-[450px] object-cover hover:scale-105 transition-transform duration-500"
-            />
-          <div className="space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-blue-900">
-              We Deliver Quality & Innovation
-            </h2>
-            <p className="text-gray-950 text-lg font-bold leading-relaxed">
-              Every service we offer is built on a foundation of innovation, integrity,
-              and excellence. Our experts combine creativity with cutting-edge technology
-              to provide solutions that truly make a difference.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-block bg-blue-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-yellow-400 hover:text-gray-900 transition"
-            >
-              Let’s Connect
-            </Link>
-          </div>
         </div>
       </section>
 
