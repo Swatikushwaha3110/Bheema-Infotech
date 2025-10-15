@@ -65,32 +65,62 @@ const About = () => {
           </h2>
           <div className="grid md:grid-cols-3 gap-10">
             {/* Card 1 */}
-            <div className="group h-72 bg-white text-gray-900 p-8 rounded-3xl shadow-xl hover:scale-105 hover:shadow-2xl hover:bg-blue-600 transition-all duration-500">
-              <div className="text-blue-600 text-5xl mb-4">👨‍💻</div>
-              <h3 className="text-2xl font-semibold mb-3 text-gray-900 group-hover:text-white">Expert Team</h3>
-              <p className="text-gray-900 group-hover:text-white">
-                Our skilled professionals craft top-notch software solutions that drive
-                business success.
-              </p>
-            </div>
+       <div className="relative group h-72 bg-white text-gray-900 p-8 rounded-3xl shadow-xl overflow-hidden">
+  
+  {/* Sliding Background */}
+  <div className="absolute inset-0 bg-blue-600 translate-y-[-100%] group-hover:translate-y-0 transition-all duration-500"></div>
+
+  {/* Content */}
+  <div className="relative z-10">
+    <div className="text-blue-600 text-5xl mb-4 group-hover:text-white">👨‍💻</div>
+    <h3 className="text-2xl font-semibold mb-3 group-hover:text-white">
+      Expert Team
+    </h3>
+    <p className="group-hover:text-white">
+      Our skilled professionals craft top-notch software solutions that drive
+      business success.
+    </p>
+  </div>
+</div>
+
 
             {/* Card 2 */}
-            <div className="group bg-white text-gray-900 p-8 rounded-3xl shadow-xl hover:scale-105 hover:bg-blue-600 hover:shadow-2xl transition-all duration-500">
-              <div className="text-blue-600 text-5xl mb-4">🎯</div>
-              <h3 className="text-2xl font-semibold mb-3 text-gray-900 group-hover:text-white">Customer-Centric</h3>
-              <p className="text-gray-900 group-hover:text-white">
-                We understand your goals and customize solutions to meet your exact needs.
-              </p>
-            </div>
+           <div className="relative group h-72 bg-white text-gray-900 p-8 rounded-3xl shadow-xl overflow-hidden transition-all duration-500">
+
+  {/* Sliding Background */}
+  <div className="absolute inset-0 bg-blue-600 translate-y-[-100%] group-hover:translate-y-0 transition-all duration-500"></div>
+
+  {/* Content */}
+  <div className="relative z-10">
+    <div className="text-blue-600 text-5xl mb-4 group-hover:text-white">🎯</div>
+    <h3 className="text-2xl font-semibold mb-3 text-gray-900 group-hover:text-white">
+      Customer-Centric
+    </h3>
+    <p className="text-gray-900 group-hover:text-white">
+      We understand your goals and customize solutions to meet your exact needs.
+    </p>
+  </div>
+</div>
+
 
             {/* Card 3 */}
-            <div className="group bg-white text-gray-900 p-8 rounded-3xl shadow-xl hover:scale-105 hover:bg-blue-600 hover:shadow-2xl transition-all duration-500">
-              <div className="text-blue-600 text-5xl mb-4">🚀</div>
-              <h3 className="text-2xl font-semibold mb-3 text-gray-900 group-hover:text-white">Innovative Solutions</h3>
-              <p className="text-gray-900 group-hover:text-white">
-                Delivering creativity and advanced technology to boost your business growth.
-              </p>
-            </div>
+           <div className="relative group h-72 bg-white text-gray-900 p-8 rounded-3xl shadow-xl overflow-hidden transition-all duration-500">
+
+  {/* Sliding Background */}
+  <div className="absolute inset-0 bg-blue-600 translate-y-[-100%] group-hover:translate-y-0 transition-all duration-500"></div>
+
+  {/* Content */}
+  <div className="relative z-10">
+    <div className="text-blue-600 text-5xl mb-4 group-hover:text-white">🚀</div>
+    <h3 className="text-2xl font-semibold mb-3 text-gray-900 group-hover:text-white">
+      Innovative Solutions
+    </h3>
+    <p className="text-gray-900 group-hover:text-white">
+      Delivering creativity and advanced technology to boost your business growth.
+    </p>
+  </div>
+</div>
+
           </div>
         </div>
       </section>

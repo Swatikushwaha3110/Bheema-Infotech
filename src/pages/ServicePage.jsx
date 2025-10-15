@@ -68,21 +68,29 @@ const Services = () => {
       <section className="pt-20 pb-16 bg-white text-gray-900 rounded-t-[3rem]">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-12">
           {services.map((service, index) => (
-            <div
-              key={index}
-              className="group bg-white p-8 rounded-3xl shadow-xl hover:scale-105 hover:shadow-2xl hover:bg-blue-600 transition-all duration-500 flex flex-col items-center text-center min-h-[300px]"
-            >
-              <div className="mb-6 text-6xl text-yellow-500 group-hover:text-white">
-                {service.icon}
-              </div>
-              <h3 className="text-gray-900 text-2xl font-bold mb-3 group-hover:text-white">
-                {service.title}
-              </h3>
-              <p className="text-lg leading-relaxed text-gray-900 group-hover:text-white">
-                {service.description}
-              </p>
-              <div className="w-16 h-1 bg-yellow-400 mt-6 rounded-full"></div>
-            </div>
+<div
+  key={index}
+  className="relative group bg-white p-8 rounded-3xl shadow-xl overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl"
+>
+  {/* ✅ Overlay for TOP to BOTTOM effect */}
+  <div className="absolute inset-0 bg-gradient-to-b from-blue-400 to-blue-600 -translate-y-full group-hover:translate-y-0 transition-all duration-500"></div>
+
+  <div className="relative z-10 flex flex-col items-center text-center min-h-[300px]">
+    <div className="mb-6 text-6xl text-yellow-500 group-hover:text-white transition-all duration-500">
+      {service.icon}
+    </div>
+    <h3 className="text-gray-900 text-2xl font-bold mb-3 group-hover:text-white transition-all duration-500">
+      {service.title}
+    </h3>
+    <p className="text-lg leading-relaxed text-gray-900 group-hover:text-white transition-all duration-500">
+      {service.description}
+    </p>
+    <div className="w-16 h-1 bg-yellow-400 mt-6 rounded-full group-hover:bg-white transition-all duration-500"></div>
+  </div>
+</div>
+
+
+
           ))}
         </div>
       </section>

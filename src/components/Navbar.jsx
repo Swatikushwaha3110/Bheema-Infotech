@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import logo from "../assets/Images/logo2.png"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,9 +12,10 @@ const Navbar = () => {
       <nav className="bg-blue-950 text-white sticky top-0 z-50 shadow-lg">
         <div className="container mx-auto flex justify-between items-center px-6 py-4">
           {/* Logo */}
-          <div className="text-2xl font-bold">
-            <Link to="/" className="flex items-center gap-1 hover:text-blue-300 transition">
-              Bheema<span className="text-blue-400">Infotech</span>
+          <div className="text-2xl font-bold flex gap-2">
+            <Link to="/"> <img className="" src={logo}alt="Logo" /> </Link>
+            <Link to="/" className="text-3xl flex items-center gap-2 transition">
+           Bheema<span className="text-blue-400">Infotech</span>  
             </Link>
           </div>
 

@@ -48,37 +48,44 @@ const Engagement = () => {
       <section className="py-20 bg-white px-4 sm:px-6 lg:px-12">
         <div className="max-w-7xl mx-auto grid gap-10 sm:gap-8 sm:grid-cols-1 md:grid-cols-3 justify-items-center">
           {engagementModels.map((model, index) => (
-            <div
-              key={index}
-              className="group bg-white rounded-3xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-500 transform p-8 sm:p-10 flex flex-col items-center text-center min-h-[320px] w-full sm:w-[18rem] md:w-[22rem] border border-gray-200 hover:bg-blue-600"
-               >
-{/* Icon Box */}
-<div className="w-24 h-8 mb-6 flex items-center justify-center rounded-2xl shadow-md bg-[#f0f7ff] group-hover:bg-blue-700 transition-all duration-300">
-  <img
-    src={model.icon}
-    alt={model.title}
-    className="w-12 h-12 sm:w-20 sm:h-20 md:w-20 md:h-20 object-contain"
-  />
+      <div
+  key={index}
+  className="relative group rounded-3xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-500 transform p-8 sm:p-10 flex flex-col items-center text-center min-h-[320px] w-full sm:w-[18rem] md:w-[22rem] overflow-hidden border border-gray-200"
+>
+  {/* Sliding Overlay for top-to-bottom effect */}
+  <div className="absolute inset-0 bg-blue-600 -translate-y-full group-hover:translate-y-0 transition-all duration-500"></div>
+
+  {/* Card Content */}
+  <div className="relative z-10 flex flex-col items-center text-center">
+    {/* Icon Box */}
+    <div className="w-24 h-8 mb-6 flex items-center justify-center rounded-2xl shadow-md bg-[#f0f7ff] group-hover:bg-blue-700 transition-all duration-300">
+      <img
+        src={model.icon}
+        alt={model.title}
+        className="w-12 h-12 sm:w-20 sm:h-20 md:w-20 md:h-20 object-contain"
+      />
+    </div>
+
+    {/* Title */}
+    <h3 className="text-xl sm:text-2xl font-bold mb-3 text-gray-900 group-hover:text-white transition-all duration-500">
+      {model.title}
+    </h3>
+
+    {/* Description */}
+    <p className="text-gray-700 text-sm sm:text-base group-hover:text-white transition-all duration-500 leading-relaxed">
+      {model.description}
+    </p>
+
+    {/* Link */}
+    <Link
+      to="#contact"
+      className="mt-4 inline-block text-blue-600 font-semibold group-hover:text-yellow-300 transition duration-300"
+    >
+      Learn More →
+    </Link>
+  </div>
 </div>
 
-              {/* Title */}
-              <h3 className="text-xl sm:text-2xl font-bold mb-3 text-gray-900 group-hover:text-white">
-                {model.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-gray-700 text-sm sm:text-base group-hover:text-white leading-relaxed">
-                {model.description}
-              </p>
-
-              {/* Link */}
-              <Link
-                to="#contact"
-                className="mt-4 inline-block text-blue-600 font-semibold group-hover:text-yellow-300 transition duration-300"
-              >
-                Learn More →
-              </Link>
-            </div>
           ))}
         </div>
       </section>
