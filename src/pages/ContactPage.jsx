@@ -24,21 +24,25 @@ const Contact = () => {
     setErrorMsg("");
 
     try {
-      const res = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      // Convert form data to URL parameters (like FormData + URLSearchParams)
+      const params = new URLSearchParams(formData);
 
-      const data = await res.json();
-      if (res.ok) {
-        setSuccessMsg(data.success);
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbz5WOULCbps9jQBoZ-Ky6j0zymSjELwosbfBL1dDJV8-9WtHFMst3CPW2kqrpMhYQr-DQ/exec",
+        {
+          method: "POST",
+          body: params,
+        }
+      );
+
+      if (response.ok) {
+        setSuccessMsg("Thank you! Your message has been submitted.");
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
-        setErrorMsg(data.error || "Something went wrong!");
+        setErrorMsg("Something went wrong! Please try again.");
       }
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      console.error("Error!", error.message);
       setErrorMsg("Server error! Please try again later.");
     }
 
@@ -47,13 +51,14 @@ const Contact = () => {
 
   return (
     <div className="bg-gray-50 text-gray-800 min-h-screen pt-8">
-      {/* Header */}
+      {/* Header Section */}
       <section className="text-center mb-12 px-6 md:px-12 lg:px-24">
         <h1 className="text-4xl md:text-5xl font-bold text-blue-900 mb-4">
           Get in <span className="text-blue-600">Touch</span>
         </h1>
         <p className="text-gray-700 max-w-2xl mx-auto text-lg md:text-xl">
-          Have a project or question? We'd love to hear from you. Fill out the form below and we will get back to you shortly.
+          Have a project or question? We'd love to hear from you. Fill out the
+          form below and we will get back to you shortly.
         </p>
       </section>
 
@@ -64,9 +69,12 @@ const Contact = () => {
           <div className="group bg-white p-8 rounded-xl shadow hover:shadow-xl transition duration-300 flex items-center gap-6">
             <MdLocationOn className="text-blue-600 text-4xl transition duration-300 group-hover:text-blue-700" />
             <div>
-              <h3 className="text-2xl font-semibold mb-2 text-blue-900">Location</h3>
+              <h3 className="text-2xl font-semibold mb-2 text-blue-900">
+                Location
+              </h3>
               <p className="text-gray-700">
-                302 A, Rajat Complex, 18, Kibe Compound, Madhumilan Square, In Front of Dawa Bazar, Indore, Madhya Pradesh 452001
+                302 A, Rajat Complex, 18, Kibe Compound, Madhumilan Square, In
+                Front of Dawa Bazar, Indore, Madhya Pradesh 452001
               </p>
             </div>
           </div>
@@ -74,7 +82,9 @@ const Contact = () => {
           <div className="group bg-white p-8 rounded-xl shadow hover:shadow-xl transition duration-300 flex items-center gap-6">
             <MdEmail className="text-blue-600 text-4xl transition duration-300 group-hover:text-blue-700" />
             <div>
-              <h3 className="text-2xl font-semibold mb-2 text-blue-900">Email</h3>
+              <h3 className="text-2xl font-semibold mb-2 text-blue-900">
+                Email
+              </h3>
               <p className="text-gray-700">bheemainfotech@gmail.com</p>
             </div>
           </div>
@@ -82,8 +92,12 @@ const Contact = () => {
           <div className="group bg-white p-8 rounded-xl shadow hover:shadow-xl transition duration-300 flex items-center gap-6">
             <MdPhone className="text-blue-600 text-4xl transition duration-300 group-hover:text-blue-700" />
             <div>
-              <h3 className="text-2xl font-semibold mb-2 text-blue-900">Phone</h3>
-              <p className="text-gray-700">+91-8770775732, +91-9770362377</p>
+              <h3 className="text-2xl font-semibold mb-2 text-blue-900">
+                Phone
+              </h3>
+              <p className="text-gray-700">
+                +91-8770775732, +91-9770362377
+              </p>
             </div>
           </div>
         </div>
@@ -92,7 +106,9 @@ const Contact = () => {
         <div className="bg-white p-8 rounded-xl shadow-xl">
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
-              <label className="block mb-2 font-medium text-gray-700">Name</label>
+              <label className="block mb-2 font-medium text-gray-700">
+                Name
+              </label>
               <input
                 type="text"
                 name="name"
@@ -105,7 +121,9 @@ const Contact = () => {
             </div>
 
             <div>
-              <label className="block mb-2 font-medium text-gray-700">Email</label>
+              <label className="block mb-2 font-medium text-gray-700">
+                Email
+              </label>
               <input
                 type="email"
                 name="email"
@@ -118,7 +136,9 @@ const Contact = () => {
             </div>
 
             <div>
-              <label className="block mb-2 font-medium text-gray-700">Subject</label>
+              <label className="block mb-2 font-medium text-gray-700">
+                Subject
+              </label>
               <input
                 type="text"
                 name="subject"
@@ -131,7 +151,9 @@ const Contact = () => {
             </div>
 
             <div>
-              <label className="block mb-2 font-medium text-gray-700">Message</label>
+              <label className="block mb-2 font-medium text-gray-700">
+                Message
+              </label>
               <textarea
                 rows="5"
                 name="message"
@@ -147,15 +169,25 @@ const Contact = () => {
               type="submit"
               disabled={loading}
               className={`w-full py-3 rounded-md font-semibold transition ${
-                loading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-700 hover:bg-blue-800 text-white"
+                loading
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-blue-700 hover:bg-blue-800 text-white"
               }`}
             >
               {loading ? "Sending..." : "Send Message"}
             </button>
 
-            {/* Success & Error messages */}
-            {successMsg && <p className="mt-4 text-center text-green-600 font-medium">{successMsg}</p>}
-            {errorMsg && <p className="mt-4 text-center text-red-600 font-medium">{errorMsg}</p>}
+            {/* Success & Error Messages */}
+            {successMsg && (
+              <p className="mt-4 text-center text-green-600 font-medium">
+                {successMsg}
+              </p>
+            )}
+            {errorMsg && (
+              <p className="mt-4 text-center text-red-600 font-medium">
+                {errorMsg}
+              </p>
+            )}
           </form>
         </div>
       </section>

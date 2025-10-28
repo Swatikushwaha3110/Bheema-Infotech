@@ -1,70 +1,84 @@
 import React from "react";
-import img1 from "../assets/Images/apnaindorishop.png";
-import img2 from "../assets/Images/sunfarm.jpg";
-import img3 from "../assets/Images/biggestwartournaments.png";
-import img4 from "../assets/Images/hs_general_store.png";
+import image1 from "../assets/images/image1.jpg";
+import image2 from "../assets/images/image2.jpg";
+import image3 from "../assets/images/image3.jpg";
+import image4 from "../assets/images/image4.jpg";
+import Unicat from "../components/Unicat";
+import OneSchool from "../components/OneSchool";
 
-const Portfolio = () => {
-  const projects = [
-    { title: "Apna Indori Shop", img: img1, link: "#" },
-    { title: "Sun Farm", img: img2, link: "#" },
-    { title: "Biggest War Tournaments", img: img3, link: "#" },
-    { title: "HS General Store", img: img4, link: "#" },
-  ];
-
+const PortfolioPage = () => {
   return (
-    <div className="bg-gray-50 text-gray-800 pt-8">
-      <section className="text-center mb-12 px-6 md:px-12 lg:px-24">
-        <h1 className="text-4xl md:text-5xl font-bold text-blue-900 mb-4">
-          Our <span className="text-blue-600">Portfolio</span>
-        </h1>
-        <p className="text-gray-700 max-w-2xl mx-auto text-lg md:text-xl">
-          Check out some of our recent projects where we delivered cutting-edge solutions for our clients.
-        </p>
-      </section>
+  <>
+    <section className="bg-blue-500 py-20 px-6 md:px-12 lg:px-24 text-white relative overflow-hidden">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+        {/* 🧩 Left Text Section */}
+        <div className="flex-1 space-y-4 text-center md:text-left z-10">
+          <h2 className="text-white tracking-widest font-semibold text-2xl">
+            Explore Our
+          </h2>
 
-      <section className="container mx-auto px-6 md:px-12 lg:px-24">
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="relative group rounded-xl overflow-hidden shadow-md hover:shadow-xl border border-gray-200 transition-all duration-500 hover:-translate-y-1"
-            >
-              <img
-                src={project.img}
-                alt={project.title}
-                className="w-full h-64 md:h-72 object-cover transition-transform duration-500 group-hover:scale-110"
-              />
+          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
+            Creative Portfolio
+          </h1>
 
-              {/* Overlay from Bottom */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-all duration-500">
-                <h3 className="text-white text-lg font-semibold">{project.title}</h3>
-                <a
-                  href={project.link}
-                  className="mt-2 inline-block bg-orange-500 hover:bg-orange-600 px-5 py-2 rounded-full text-sm font-medium text-white shadow-md transition"
-                >
-                  View Project
-                </a>
-              </div>
-            </div>
-          ))}
+          <p className="text-gray-200 text-lg leading-relaxed max-w-lg">
+            We strive to deliver the best work for every single project.  
+            Here’s a few of them we'd love you to see.
+          </p>
+
+          <h6 className="text-gray-300 text-base">
+            Delivered{" "}
+            <span className="font-bold text-indigo-400">5000+</span> projects to{" "}
+            <span className="font-bold text-indigo-400">3000+</span> global clients — and counting...
+          </h6>
+
+          <button className="mt-4 px-8 py-3 bg-orange-600 hover:bg-indigo-700 text-white font-semibold rounded-xl shadow-lg transition-all duration-300">
+            Request Free Consultation
+          </button>
         </div>
-      </section>
 
-      <section className="bg-blue-50 py-16 text-center mt-16 px-6 md:px-12 lg:px-24">
-        <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Want to See More?</h2>
-        <p className="text-gray-700 mb-8 max-w-2xl mx-auto text-lg">
-          We handle projects across industries. Contact us to discuss your project requirements.
-        </p>
-        <a
-          href="#contact"
-          className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-3 rounded-full font-semibold shadow-lg transition transform hover:scale-105"
-        >
-          Get In Touch
-        </a>
-      </section>
-    </div>
+        {/* 🧩 Right Image Section */}
+        <div className="overflow-hidden rounded-2xl p-4 md:p-6">
+          <div className="flex flex-col sm:flex-row mx-auto gap-6 justify-center">
+            <a href="#_">
+              <img
+                src={image1}
+                alt="Portfolio 1"
+                className="rounded-xl rotate-6 hover:rotate-0 duration-500 hover:-translate-y-6 h-90 w-150 object-cover hover:scale-110 transform origin-bottom shadow-lg hover:shadow-2xl transition-all"
+              />
+            </a>
+
+            <a href="#_">
+              <img
+                src={image2}
+                alt="Portfolio 2"
+                className="rounded-xl -rotate-12 hover:rotate-0 duration-500 hover:-translate-y-6 h-90 w-150  object-cover hover:scale-110 transform origin-bottom shadow-lg hover:shadow-2xl transition-all"
+              />
+            </a>
+
+            <a href="#_">
+              <img
+                src={image3}
+                alt="Portfolio 3"
+                className="rounded-xl rotate-6 hover:rotate-0 duration-500 hover:-translate-y-6 h-90 w-150 object-cover hover:scale-110 transform origin-bottom shadow-lg hover:shadow-2xl transition-all"
+              />
+            </a>
+
+            <a href="#_">
+              <img
+                src={image4}
+                alt="Portfolio 4"
+                className="rounded-xl -rotate-12 hover:rotate-0 duration-500 hover:-translate-y-6 h-90 w-150 object-cover hover:scale-110 transform origin-bottom shadow-lg hover:shadow-2xl transition-all"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+         </section>
+          <Unicat/>
+      <OneSchool/>
+  </>
   );
 };
 
-export default Portfolio;
+export default PortfolioPage;
