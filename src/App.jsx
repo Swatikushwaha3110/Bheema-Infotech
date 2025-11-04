@@ -29,9 +29,10 @@ function App() {
          <Route path="/engagement"element={<EngagementPage/>}/>
          <Route path="/technicalstack"element={<TechnicalPage/>}/>
          <Route path="/portfolio"element={<PortfolioPage/>}/>
+         <Route path="/portfolio/:pageId"element={<PortfolioPage/>}/>
          <Route path="/contact"element={<ContactPage/>}/>
          <Route path="/blog"element={<BlogPage/>}/>
-          <Route path="/careers" element={<CareersPage />} /> {/* default page */}
+         <Route path="/careers" element={<CareersPage />} /> {/* default page */}
         <Route path="/careers/:filter" element={<CareersPage />} />
          <Route path="/it"element={<ItPage/>}/>
          <Route path="/nonit"element={<NonItPage/>}/>

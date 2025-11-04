@@ -1,83 +1,51 @@
-import React from "react";
-import image1 from "../assets/images/image1.jpg";
-import image2 from "../assets/images/image2.jpg";
-import image3 from "../assets/images/image3.jpg";
-import image4 from "../assets/images/image4.jpg";
-import Unicat from "../components/Unicat";
-import OneSchool from "../components/OneSchool";
+import { useParams, Link } from "react-router-dom";
+import OnePage from "../pages/OnePage"
+import TwoPage from "../pages/TwoPage"
+import ThirdPage from "../pages/ThirdPage"
+import FourPage from "../pages/FourPage"
 
 const PortfolioPage = () => {
+  const { pageId } = useParams();
+
+  const renderPage = () => {
+    switch (pageId) {
+      case "1":
+        return <OnePage />;
+      case "2":
+        return <TwoPage />;
+      case "3":
+        return <ThirdPage />;
+      case "4":
+        return <FourPage />;
+      default:
+        return <OnePage />;
+    }
+  };
+
   return (
-  <>
-    <section className="bg-blue-500 py-20 px-6 md:px-12 lg:px-24 text-white relative overflow-hidden">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-        {/* 🧩 Left Text Section */}
-        <div className="flex-1 space-y-4 text-center md:text-left z-10">
-          <h2 className="text-white tracking-widest font-semibold text-2xl">
-            Explore Our
-          </h2>
+    <div className="w-full min-h-screen flex flex-col justify-between p-0 m-0 overflow-hidden">
 
-          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
-            Creative Portfolio
-          </h1>
-
-          <p className="text-gray-200 text-lg leading-relaxed max-w-lg">
-            We strive to deliver the best work for every single project.  
-            Here’s a few of them we'd love you to see.
-          </p>
-
-          <h6 className="text-gray-300 text-base">
-            Delivered{" "}
-            <span className="font-bold text-indigo-400">5000+</span> projects to{" "}
-            <span className="font-bold text-indigo-400">3000+</span> global clients — and counting...
-          </h6>
-
-          <button className="mt-4 px-8 py-3 bg-orange-600 hover:bg-indigo-700 text-white font-semibold rounded-xl shadow-lg transition-all duration-300">
-            Request Free Consultation
-          </button>
-        </div>
-
-        {/* 🧩 Right Image Section */}
-        <div className="overflow-hidden rounded-2xl p-4 md:p-6">
-          <div className="flex flex-col sm:flex-row mx-auto gap-6 justify-center">
-            <a href="#_">
-              <img
-                src={image1}
-                alt="Portfolio 1"
-                className="rounded-xl rotate-6 hover:rotate-0 duration-500 hover:-translate-y-6 h-90 w-150 object-cover hover:scale-110 transform origin-bottom shadow-lg hover:shadow-2xl transition-all"
-              />
-            </a>
-
-            <a href="#_">
-              <img
-                src={image2}
-                alt="Portfolio 2"
-                className="rounded-xl -rotate-12 hover:rotate-0 duration-500 hover:-translate-y-6 h-90 w-150  object-cover hover:scale-110 transform origin-bottom shadow-lg hover:shadow-2xl transition-all"
-              />
-            </a>
-
-            <a href="#_">
-              <img
-                src={image3}
-                alt="Portfolio 3"
-                className="rounded-xl rotate-6 hover:rotate-0 duration-500 hover:-translate-y-6 h-90 w-150 object-cover hover:scale-110 transform origin-bottom shadow-lg hover:shadow-2xl transition-all"
-              />
-            </a>
-
-            <a href="#_">
-              <img
-                src={image4}
-                alt="Portfolio 4"
-                className="rounded-xl -rotate-12 hover:rotate-0 duration-500 hover:-translate-y-6 h-90 w-150 object-cover hover:scale-110 transform origin-bottom shadow-lg hover:shadow-2xl transition-all"
-              />
-            </a>
-          </div>
-        </div>
+      {/* ✅ Content always stays at top */}
+      <div className="flex-1 p-0 m-0">
+        {renderPage()}
       </div>
-         </section>
-          <Unicat/>
-      <OneSchool/>
-  </>
+
+      {/* ✅ Pagination sticks at bottom, NO EMPTY GAP */}
+      <div className="w-full flex justify-center gap-2 py-4 bg-white border-t">
+        <Link to="/portfolio" className="px-4 py-2 bg-gray-200 hover:bg-blue-500 hover:text-white rounded">
+          1
+        </Link>
+        <Link to="/portfolio/2" className="px-4 py-2 bg-gray-200 hover:bg-blue-500 hover:text-white rounded">
+          2
+        </Link>
+        <Link to="/portfolio/3" className="px-4 py-2 bg-gray-200 hover:bg-blue-500 hover:text-white rounded">
+          3
+        </Link>
+        <Link to="/portfolio/4" className="px-4 py-2 bg-gray-200 hover:bg-blue-500 hover:text-white rounded">
+          4
+        </Link>
+      </div>
+    </div>
   );
 };
 

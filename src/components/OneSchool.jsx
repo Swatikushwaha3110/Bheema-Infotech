@@ -1,20 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import loader from "../assets/Gradient Loading.gif";
+// import loader from "../assets/Gradient Loading.gif";
+// import loader1 from "../assets/NFC Card Read!.gif";
+// import loader2 from "../assets/plux_loader_2.gif"
+import loader3 from "../assets/loader.gif"
+import oneSchool from "../assets/oneschool.png"
 
 const OneSchool = () => {
   return (
-    <section className="py-16 md:px-12 lg:px-24 bg-gradient-to-r from-gray-50 via-white to-gray-100 flex items-center justify-between">
+   <>
+    <section className="py-16 md:px-12 lg:px-24 flex items-center justify-between">
       <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
         
         {/* -------------------- Left Image Section -------------------- */}
-        <div className="flex-1 flex justify-center md:justify-end">
-          <img
-            src={loader}
-            alt="OneSchool Project"
-            className="w-full max-w-md rounded-2xl shadow-2xl hover:scale-105 
-                       transition-transform duration-500"
-          />
+        <div className="flex-1 flex justify-center ">
+       <img
+  src={loader3}
+  alt="OneSchool Project"
+  className="w-full rounded-2xl hover:scale-105 
+             transition-transform duration-500 mix-blend-multiply"
+         
+/>
+{/* <img src={oneSchool}/> */}
+
         </div>
 
         {/* -------------------- Right Content Section -------------------- */}
@@ -68,6 +76,7 @@ const OneSchool = () => {
 
       </div>
     </section>
+   </>
   );
 };
 

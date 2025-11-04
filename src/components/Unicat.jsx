@@ -41,7 +41,7 @@ const Unicat = () => {
           <img
             src={loader}
             alt="Unicat Project"
-            className="w-full max-w-md rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500 z-10"
+            className="w-full max-w-md rounded-2xl hover:scale-105 transition-transform duration-500 z-10"
           />
         </div>
 
