@@ -1,59 +1,63 @@
 import React from "react";
-import card2 from "../assets/new-banner-img2.png"; // Add new image here
-import DocBlog from "../components/DocBlog";
+import card2 from "../assets/new-banner-img2.png"; 
 import Selfie from "../components/Selfie";
-import ProPBX from "../components/ProPBX";
-import Snix from "../components/Snix";
-import TradePlus from "../components/TradePlus";
 import Rooyah from "../components/Rooyah";
+import EasyStore from "../components/EasyStore";
+import ApnaIndoriShop from "../components/ApnaIndoriShop";
 
 const TwoPage = () => {
   return (
-  <>
-      <section className="w-full bg-[#03303B] text-white py-20 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-10">
-        
-        {/* LEFT TEXT */}
-        <div className="flex-1">
-          <h3 className="text-2xl md:text-3xl font-semibold">We Build Modern Websites</h3>
-          <h1 className="text-5xl md:text-6xl font-bold mt-2 text-white">
+    <>
+      {/* ✅ HERO SECTION */}
+      <section className="w-full bg-[#03303B] text-white px-6 md:px-12 lg:px-24 py-10 md:py-14 overflow-hidden md:h-[550px] flex items-center">
+
+        {/* ✅ LEFT CONTENT */}
+        <div className="flex flex-col text-center md:text-left max-w-[320px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[550px] z-20">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-wide leading-tight text-teal-300">
+            We Build Modern Websites
+          </h2>
+
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mt-2 leading-tight">
             Smart Designs, Great Results
           </h1>
 
-          <p className="mt-6 text-lg leading-7">
-            From inspiring UI to powerful functionality, we create websites that 
-            boost business growth and drive conversions with seamless user experience.
+          <p className="mt-4 text-base sm:text-lg md:text-xl opacity-90 leading-relaxed">
+            From powerful UI to smooth performance — we create websites that
+            boost conversions and help your business grow faster.
           </p>
 
-          <button className="mt-8 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-6 py-3 rounded-md">
+          <button className="mt-6 bg-yellow-500 hover:bg-yellow-600 active:scale-95 transition-all text-white font-semibold w-[220px] py-3 rounded-md text-base sm:text-lg mx-auto md:mx-0">
             Explore Our Services
           </button>
         </div>
 
-        {/* RIGHT IMAGE CARDS Stylish */}
-        <div className="relative flex-1 flex justify-center items-center">
-          <div className="relative group w-[300px] md:w-[420px]">
-            <div className="absolute -z-10 inset-0 rounded-xl blur-xl opacity-50 bg-teal-700 group-hover:opacity-70 transition-all duration-500"></div>
+        {/* ✅ RIGHT IMAGE */}
+        <div className="flex-1 flex justify-center md:justify-end items-center relative">
+          <div className="absolute opacity-25 blur-3xl w-[750px] h-[750px] rounded-full"></div>
 
-            <img
-              src={card2}
-              alt="portfolio-2"
-              className="rounded-xl shadow-2xl transform rotate-[-7deg] group-hover:rotate-[-3deg] group-hover:scale-105 transition-all duration-500 ease-out"
-            />
-
-            <div className="absolute inset-0 rounded-xl group-hover:border border-white/30 transition-all duration-500"></div>
-          </div>
+          <img
+            src={card2}
+            alt="portfolio-2"
+            className="
+              relative z-10
+              w-[420px]
+              sm:w-[520px]
+              md:w-[640px]
+              lg:w-[760px]
+              xl:w-[880px]
+              object-contain
+              transition-transform duration-500 hover:scale-105
+            "
+          />
         </div>
+      </section>
 
-      </div>
-    </section>
-    <DocBlog/>
-    <Selfie/>
-    <ProPBX/>
-    <Snix/>
-    <TradePlus/>
-    <Rooyah/>
-  </>
+      {/* ✅ Bottom Portfolio Sections */}
+      <EasyStore />
+      <Selfie />
+      <ApnaIndoriShop />
+      <Rooyah />
+    </>
   );
 };
 

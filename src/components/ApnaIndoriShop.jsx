@@ -1,45 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import loadervideo from "../assets/loadervideo.mp4"
+import loadervideo from "../assets/loadervideo.mp4";
 import apnaindori from "../assets/apnaindori.png";
+import canvas from "../assets/Canvas Framer Template - Framer Mobile.mp4";
 
 const ApnaIndoriShop = () => {
   return (
-    <>
-      <section className="py-16 md:px-12 lg:px-24 bg-white flex items-center justify-between">
+    <section className="py-12 px-6 md:px-12 lg:px-24 bg-white">
+      <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-14">
 
-        {/* -------------------- LEFT IMAGE SECTION -------------------- */}
-    <div className="flex-1 relative flex justify-center items-center min-h-[500px] md:min-h-[600px] overflow-hidden">
-    
-      {/* ✅ Background Video Full Size */}
-      <video
-        src={loadervideo}
-        autoPlay
-        muted
-        loop
-        className="absolute w-[700px] h-[700px] object-cover opacity-90 animate-spin-slow"
-        style={{ zIndex: 1 }}
-      ></video>
-    
-      {/* ✅ Image EXACT center of video */}
-    <div className="relative z-10 w-[350px] h-[350px] md:w-[330px] md:h-[330px] flex items-center justify-center">
-    
-      <div className="w-[300px] h-[300px] md:w-[330px] md:h-[330px] rounded-full flex items-center justify-center">
-        <img
-          src={apnaindori}
-          alt="Store"
-          className="w-[90%] h-[90%] object-contain rounded-full"
-        />
-      </div>
-    
-    </div>
-    
-    </div>
-    
-
-        {/* -------------------- RIGHT TEXT SECTION -------------------- */}
+        {/* ✅ LEFT SIDE (Content) */}
         <div className="flex-1 text-center md:text-left space-y-5">
-
           <h3 className="text-blue-600 text-lg font-semibold uppercase tracking-wide">
             E-Commerce Platform
           </h3>
@@ -70,13 +41,49 @@ const ApnaIndoriShop = () => {
                        text-white font-semibold rounded-xl shadow-lg 
                        transition-all duration-300"
           >
-            Visit Live Website
+            Visit Live Project
           </Link>
-
         </div>
 
-      </section>
-    </>
+        {/* ✅ RIGHT SIDE (Same as EasyStore layout) */}
+        <div className="flex-1 flex justify-center items-center">
+          <div className="relative flex justify-center items-center
+                          w-full max-w-[480px] 
+                          h-[380px] md:h-[550px]">
+
+            {/* ✅ Rotating Background Video */}
+            <video
+              src={canvas}
+              autoPlay
+              muted
+              loop
+              className="
+                absolute 
+                w-[260px] h-[260px]
+                md:w-[550px] md:h-[550px]
+                object-contain
+                opacity-80 animate-spin-slow
+              "
+              style={{ zIndex: 1 }}
+            ></video>
+
+            {/* ✅ Center Image */}
+            <div className="relative z-10 flex items-center justify-center">
+              <img
+                src={apnaindori}
+                alt="Apna Indori Shop"
+                className="
+                  w-[180px] h-[180px] 
+                  md:w-[320px] md:h-[310px]
+                  object-contain rounded-2xl
+                "
+              />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
   );
 };
 

@@ -33,8 +33,8 @@ const PortfolioPage = () => {
       {/* ✅ Pagination sticks at bottom, NO EMPTY GAP */}
       <div className="w-full flex justify-center gap-2 py-4 bg-white border-t">
         <Link to="/portfolio" className="px-4 py-2 bg-gray-200 hover:bg-blue-500 hover:text-white rounded">
-          1
-        </Link>
+        1
+          </Link>
         <Link to="/portfolio/2" className="px-4 py-2 bg-gray-200 hover:bg-blue-500 hover:text-white rounded">
           2
         </Link>

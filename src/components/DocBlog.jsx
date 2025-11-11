@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import loader from "../assets/Gradient Loading.gif";
+import canvas from "../assets/Canvas Framer Template - Framer Mobile.mp4";
+// import docblog from "../assets/docblog.png"; 
 
 const DocBlog = () => {
   return (
-    <section className="py-16 px-6 md:px-12 lg:px-24 bg-gradient-to-r from-gray-50 via-white to-gray-100">
-      <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+    <section className="py-12 px-6 md:px-12 lg:px-24 bg-white">
+      <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-14">
 
-        {/* -------------------- Left Content Section -------------------- */}
+        {/* ✅ LEFT CONTENT */} 
         <div className="flex-1 text-center md:text-left space-y-5">
           <h3 className="text-purple-600 text-lg font-semibold uppercase tracking-wide">
             AI Powered Content Writing
@@ -33,8 +34,7 @@ const DocBlog = () => {
           <Link
             to="https://doc-blog-2.vercel.app/"
             target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 inline-block px-8 py-3 bg-purple-600 hover:bg-purple-700 
+            className="mt-6 inline-block px-8 py-3 bg-blue-600 hover:bg-blue-700 
                        text-white font-semibold rounded-xl shadow-lg 
                        transition-all duration-300"
           >
@@ -42,13 +42,27 @@ const DocBlog = () => {
           </Link>
         </div>
 
-        {/* -------------------- Right Image Section -------------------- */}
+        {/* ✅ RIGHT SIDE — VIDEO + IMAGE CLEAN ALIGNMENT */}
         <div className="flex-1 flex justify-center md:justify-end relative">
-          <img
-            src={loader}
-            alt="DocBlog Website"
-            className="w-full max-w-md rounded-2xl hover:scale-105 transition-transform duration-500"
+
+          {/* ✅ Background animated canvas */}
+          <video
+            src={canvas}
+            autoPlay
+            muted
+            loop
+            className="absolute w-[240px] h-[240px] md:w-[400px] md:h-[400px]
+                       object-contain opacity-80 animate-spin-slow"
           />
+
+          {/* ✅ Foreground Main Screenshot */}
+          {/* <img
+            src={}
+            alt="DocBlog Website"
+            className="relative z-10 w-[170px] h-[170px] md:w-[280px] md:h-[280px]
+                       object-contain rounded-2xl drop-shadow-xl hover:scale-105
+                       transition-transform duration-500"
+          /> */}
         </div>
 
       </div>

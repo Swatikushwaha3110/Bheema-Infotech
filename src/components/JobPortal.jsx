@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import loadervideo from "../assets/loadervideo.mp4";// ✅ background animation
-import jobportal from "../assets/job portal.png";       // ✅ center image (replace with your logo)
+import jobportal from "../assets/job portal.png";
+import canvas from "../assets/Canvas Framer Template - Framer Mobile.mp4";
 
 const JobPortal = () => {
   return (
-    <section className="py-16 px-6 md:px-12 lg:px-24 bg-gradient-to-r from-gray-50 via-white to-gray-100">
-      <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+    <section className="py-12 px-6 md:px-12 lg:px-24 bg-white">
+      <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-14">
 
         {/* ✅ LEFT CONTENT */}
         <div className="flex-1 text-center md:text-left space-y-5">
@@ -26,10 +26,10 @@ const JobPortal = () => {
           </p>
 
           <div className="space-y-2 text-gray-800 text-lg">
-            <p>✅ Easy Login & Registration</p>
-            <p>✅ Resume Upload & Profile Management</p>
-            <p>✅ Apply Directly to Job Listings</p>
-            <p>✅ Application Tracking & Notifications</p>
+            <p>🧾 <span className="font-semibold">Easy Login & Registration</span></p>
+            <p>📄 <span className="font-semibold">Resume Upload & Profile Management</span></p>
+            <p>💼 <span className="font-semibold">Apply Directly to Job Listings</span></p>
+            <p>📊 <span className="font-semibold">Application Tracking & Notifications</span></p>
           </div>
 
           <Link
@@ -37,37 +37,49 @@ const JobPortal = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="mt-6 inline-block px-8 py-3 bg-blue-600 hover:bg-blue-700 
-            text-white font-semibold rounded-xl shadow-lg transition-all duration-300"
+                       text-white font-semibold rounded-xl shadow-lg 
+                       transition-all duration-300"
           >
-            Visit Live Job Portal
+            Visit Live Project
           </Link>
         </div>
 
-   {/* ✅ RIGHT SECTION (BACKGROUND VIDEO + CENTER IMAGE) */}
-<div className="flex-1 relative flex justify-center items-center min-h-[460px] md:min-h-[550px] overflow-hidden">
+        {/* ✅ RIGHT SIDE */}
+        <div className="flex-1 flex justify-center items-center">
+          <div className="relative flex justify-center items-center
+                          w-full max-w-[480px]
+                          h-[380px] md:h-[550px]">
 
-  {/* ✅ Background Loader Animation */}
-  <video
-    src={loadervideo}
-    autoPlay
-    muted
-    loop
-    className="absolute w-[700px] h-[700px] object-contain opacity-90"
-    style={{ zIndex: 1 }}
-  />
+            {/* ✅ Background Rotating Video */}
+            <video
+              src={canvas}
+              autoPlay
+              muted
+              loop
+              className="
+                absolute 
+                w-[300px] h-[300px]
+                md:w-[460px] md:h-[460px]
+                object-contain
+                opacity-80 animate-spin-slow
+              "
+              style={{ zIndex: 1 }}
+            ></video>
 
-  {/* ✅ Center Round Image */}
-  <div className="relative z-10 w-[330px] h-[330px] md:w-[350px] md:h-[350px] flex items-center justify-center">
-    <div className="w-full h-full rounded-full overflow-hidden flex items-center justify-center">
-      <img
-        src={jobportal}
-        alt="Job Portal Logo"
-        className="w-[90%] h-[90%] rounded-full"
-      />
-    </div>
-  </div>
-
-</div>
+            {/* ✅ Center Image (slightly increased) */}
+            <div className="relative z-10 flex items-center justify-center">
+              <img
+                src={jobportal}
+                alt="Job Portal Logo"
+                className="
+                  w-[250px] h-[200px]          
+                  md:w-[400px] md:h-[300px]    
+                  object-contain
+                "
+              />
+            </div>
+          </div>
+        </div>
 
       </div>
     </section>

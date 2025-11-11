@@ -1,59 +1,69 @@
 import React from "react";
-import card from "../assets/new-banner-img2.png"; // Same or new image path
-import Neo4Tech from "../components/Neo4Tech";
-import MocProject from "../components/MocProject";
+import card from "../assets/new-banner-img2.png";
+// import Neo4Tech from "../components/Neo4Tech";
+// import MocProject from "../components/MocProject";
 import ComplianceSutra from "../components/ComplianceSutra";
-import DocDBi from "../components/DocDBi";
 import AnyService from "../components/AnyService";
 import BheemaERP from "../components/BheemaERP";
+import TradePlus from "../components/TradePlus";
 
 const ThirdPage = () => {
   return (
-   <>
-    <section className="w-full bg-[#03303B] text-white py-20 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-10">
+    <>
+      <section className="w-full bg-[#03303B] text-white px-6 md:px-12 lg:px-24 py-16 overflow-hidden">
+        <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12">
 
-        {/* LEFT TEXT */}
-        <div className="flex-1">
-          <h3 className="text-2xl md:text-3xl font-semibold">Transform Your Business</h3>
-          <h1 className="text-5xl md:text-6xl font-bold mt-2 text-white">
-            With Powerful Websites
-          </h1>
+          {/* ✅ LEFT TEXT */}
+          <div className="flex-1 text-center md:text-left">
+            <h3 className="text-xl md:text-2xl font-semibold">
+              Transform Your Business
+            </h3>
 
-          <p className="mt-6 text-lg leading-7">
-            We design and develop responsive, modern, and creative websites
-            that increase customer engagement and help your business grow faster.
-          </p>
+            <h1 className="text-4xl md:text-6xl font-bold mt-2 text-white leading-tight">
+              With Powerful Websites
+            </h1>
 
-          <button className="mt-8 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-md">
-            Let’s Build Your Project
-          </button>
-        </div>
+            <p className="mt-6 text-base md:text-lg leading-7 opacity-90 max-w-xl mx-auto md:mx-0">
+              We design and develop responsive, modern, and creative websites
+              that increase customer engagement and help your business grow faster.
+            </p>
 
-        {/* RIGHT IMAGE STYLE */}
-        <div className="relative flex-1 flex justify-center items-center">
-          <div className="relative group w-[300px] md:w-[420px]">
-            <div className="absolute -z-10 inset-0 rounded-xl blur-xl opacity-50 bg-teal-700 group-hover:opacity-70 transition-all duration-500"></div>
+            <button className="mt-8 bg-blue-600 hover:bg-blue-700 transition-all text-white font-semibold px-6 py-3 rounded-md">
+              Let’s Build Your Project
+            </button>
+          </div>
 
-            <img
-              src={card}
-              alt="website"
-              className="rounded-xl shadow-2xl transform rotate-[-6deg] group-hover:rotate-[-2deg] group-hover:scale-105 transition-all duration-500 ease-out"
-            />
+          {/* ✅ RIGHT IMAGE - RESPONSIVE WITH HOVER EFFECT */}
+          <div className="relative flex-1 flex justify-center items-center">
+            <div className="relative group w-[260px] sm:w-[300px] md:w-[420px] lg:w-[480px]">
 
-            <div className="absolute inset-0 rounded-xl group-hover:border border-white/30 transition-all duration-500"></div>
+              {/* Glow Shadow */}
+              <div className="absolute -z-10 inset-0 rounded-xl blur-xl opacity-50 bg-teal-700 group-hover:opacity-70 transition-all duration-500"></div>
+
+              {/* Main Image */}
+              <img
+                src={card}
+                alt="website"
+                className="w-full h-auto rounded-xl shadow-2xl transform rotate-[-6deg]
+                          group-hover:rotate-[-1deg] group-hover:scale-105
+                          transition-all duration-500 ease-out"
+              />
+
+              {/* Hover Border */}
+              <div className="absolute inset-0 rounded-xl group-hover:border border-white/30 transition-all duration-500"></div>
+            </div>
           </div>
         </div>
+      </section>
 
-      </div>
-    </section>
-    <Neo4Tech/>
-    <MocProject/>
-    <ComplianceSutra/>
-    <DocDBi/>
-    <AnyService/>
-    <BheemaERP/>
-   </>
+      {/* ✅ PROJECT COMPONENTS BELOW */}
+
+    
+      <ComplianceSutra />
+          <TradePlus />
+        <AnyService />
+      <BheemaERP />
+    </>
   );
 };
 
