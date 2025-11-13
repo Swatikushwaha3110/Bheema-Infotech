@@ -1,8 +1,7 @@
 import { useParams, Link } from "react-router-dom";
-import OnePage from "../pages/OnePage"
-import TwoPage from "../pages/TwoPage"
-import ThirdPage from "../pages/ThirdPage"
-import FourPage from "../pages/FourPage"
+import OnePage from "../pages/OnePage";
+import TwoPage from "../pages/TwoPage";
+import ThirdPage from "../pages/ThirdPage";
 
 const PortfolioPage = () => {
   const { pageId } = useParams();
@@ -15,8 +14,6 @@ const PortfolioPage = () => {
         return <TwoPage />;
       case "3":
         return <ThirdPage />;
-      case "4":
-        return <FourPage />;
       default:
         return <OnePage />;
     }
@@ -30,19 +27,16 @@ const PortfolioPage = () => {
         {renderPage()}
       </div>
 
-      {/* ✅ Pagination sticks at bottom, NO EMPTY GAP */}
+      {/* ✅ Pagination sticks at bottom */}
       <div className="w-full flex justify-center gap-2 py-4 bg-white border-t">
         <Link to="/portfolio" className="px-4 py-2 bg-gray-200 hover:bg-blue-500 hover:text-white rounded">
-        1
-          </Link>
+          1
+        </Link>
         <Link to="/portfolio/2" className="px-4 py-2 bg-gray-200 hover:bg-blue-500 hover:text-white rounded">
           2
         </Link>
         <Link to="/portfolio/3" className="px-4 py-2 bg-gray-200 hover:bg-blue-500 hover:text-white rounded">
           3
-        </Link>
-        <Link to="/portfolio/4" className="px-4 py-2 bg-gray-200 hover:bg-blue-500 hover:text-white rounded">
-          4
         </Link>
       </div>
     </div>

@@ -1,28 +1,42 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import storemart from "../assets/store-mart.png";
-import canvas from "../assets/Canvas Framer Template - Framer Mobile.mp4";
+import easyimage from "../assets/store-mart.png";
 
 const EasyStore = () => {
   return (
-    <section className="py-12 px-6 md:px-12 lg:px-24 bg-white">
-      <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-14">
+    <section className="py-16 px-6 md:px-12 lg:px-24 bg-gray-50 flex justify-center items-center">
+      <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 items-center gap-16">
 
-        {/* ✅ LEFT CONTENT */}
-        <div className="flex-1 text-center md:text-left space-y-5">
+        {/* ✅ LEFT SIDE: IMAGE (Professional Card Design) */}
+        <div className="flex justify-center items-center w-full h-[400px] sm:h-[480px] md:h-[520px]">
+          <div
+            className="bg-white rounded-2xl p-6 flex justify-center items-center border border-gray-100"
+            style={{
+              boxShadow: "0 8px 24px rgba(0,0,0,0.12)", // premium soft shadow
+            }}
+          >
+            <img
+              src={easyimage}
+              alt="EasyStore"
+              className="max-w-full max-h-full object-contain rounded-xl transition-transform duration-500 hover:scale-105"
+            />
+          </div>
+        </div>
+
+        {/* ✅ RIGHT SIDE: TEXT CONTENT */}
+        <div className="space-y-6 text-center md:text-left w-full">
           <h3 className="text-blue-600 text-lg font-semibold uppercase tracking-wide">
             Smart E-Commerce Store
           </h3>
 
           <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
-            Shop Products Easily with Fast Checkout System
+            EasyStore – Fast & Secure Online Shopping
           </h1>
 
           <p className="text-gray-600 text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
-            EasyStore ek modern e-commerce platform hai jahan users products
-            browse kar sakte hain, add-to-cart kar sakte hain aur secure 
-            online payment ke saath order place kar sakte hain. Order tracking, 
-            dashboard & fast delivery ke saath shopping smooth ho jati hai.
+            EasyStore is a modern e-commerce platform where users can browse products, 
+            add them to their cart, and place orders with secure online payments. 
+            With order tracking, a user-friendly dashboard, and fast delivery, 
+            EasyStore ensures a smooth and seamless shopping experience.
           </p>
 
           <div className="space-y-2 text-gray-800 text-lg">
@@ -32,54 +46,16 @@ const EasyStore = () => {
             <p>📱 <span className="font-semibold">Fully Responsive Clean UI</span></p>
           </div>
 
-          <Link
-            to="https://easystore.bheemainfotech.in/"
+          <a
+            href="https://easystore.bheemainfotech.in/"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-block px-8 py-3 bg-blue-600 hover:bg-blue-700 
-                       text-white font-semibold rounded-xl shadow-lg 
-                       transition-all duration-300"
+            className="inline-block mt-6 px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl shadow-lg transition-all duration-300"
           >
             Visit Live Project
-          </Link>
+          </a>
         </div>
 
-        {/* ✅ RIGHT - SAME AS SELFIE IMAGE/VIDEO SETUP */}
-        <div className="flex-1 flex justify-center items-center">
-          <div className="relative flex justify-center items-center
-                          w-full max-w-[480px] 
-                          h-[380px] md:h-[550px]">
-
-            {/* ✅ Rotating Background Canvas */}
-            <video
-              src={canvas}
-              autoPlay
-              muted
-              loop
-              className="
-                absolute 
-                w-[260px] h-[260px]
-                md:w-[550px] md:h-[550px]
-                object-contain
-                opacity-80 animate-spin-slow
-              "
-              style={{ zIndex: 1 }}
-            ></video>
-
-            {/* ✅ Center Image */}
-            <div className="relative z-10 flex items-center justify-center">
-              <img
-                src={storemart}
-                alt="Store Mart"
-                className="
-                  w-[180px] h-[180px] 
-                  md:w-[320px] md:h-[310px]
-                  object-contain
-                "
-              />
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

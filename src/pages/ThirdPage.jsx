@@ -1,68 +1,57 @@
 import React from "react";
-import card from "../assets/new-banner-img2.png";
-// import Neo4Tech from "../components/Neo4Tech";
-// import MocProject from "../components/MocProject";
+import hero3 from "../assets/Images/hero3.png";
 import ComplianceSutra from "../components/ComplianceSutra";
 import AnyService from "../components/AnyService";
 import BheemaERP from "../components/BheemaERP";
 import TradePlus from "../components/TradePlus";
+import JobPortal from "../components/JobPortal";
+import Snix from "../components/Snix";
+import Tripzy from "../components/Tripzy";
 
 const ThirdPage = () => {
   return (
     <>
-      <section className="w-full bg-[#03303B] text-white px-6 md:px-12 lg:px-24 py-16 overflow-hidden">
-        <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+      {/* ✅ HERO SECTION (Styled like TwoPage) */}
+      <section className="w-full bg-[#03303B] text-white px-6 md:px-10 lg:px-16 py-10 md:py-14 overflow-hidden md:h-[550px] flex items-center justify-between">
 
-          {/* ✅ LEFT TEXT */}
-          <div className="flex-1 text-center md:text-left">
-            <h3 className="text-xl md:text-2xl font-semibold">
-              Transform Your Business
-            </h3>
+        {/* ✅ LEFT CONTENT */}
+        <div className="flex flex-col text-center md:text-left max-w-[320px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[550px] z-20">
+          <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-[34px] font-semibold tracking-wide text-teal-300">
+            Transform Your Business
+          </h3>
 
-            <h1 className="text-4xl md:text-6xl font-bold mt-2 text-white leading-tight">
-              With Powerful Websites
-            </h1>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mt-2 leading-tight">
+            With Powerful Websites
+          </h1>
 
-            <p className="mt-6 text-base md:text-lg leading-7 opacity-90 max-w-xl mx-auto md:mx-0">
-              We design and develop responsive, modern, and creative websites
-              that increase customer engagement and help your business grow faster.
-            </p>
+          <p className="mt-4 text-base sm:text-lg md:text-xl opacity-90 leading-relaxed">
+            We design and develop responsive, modern, and creative websites
+            that increase customer engagement and help your business grow faster.
+          </p>
 
-            <button className="mt-8 bg-blue-600 hover:bg-blue-700 transition-all text-white font-semibold px-6 py-3 rounded-md">
-              Let’s Build Your Project
-            </button>
-          </div>
+          <button className="mt-6 bg-blue-600 hover:bg-blue-700 active:scale-95 transition-all text-white font-semibold w-[240px] py-3 rounded-md text-base sm:text-lg mx-auto md:mx-0">
+            Let’s Build Your Project
+          </button>
+        </div>
 
-          {/* ✅ RIGHT IMAGE - RESPONSIVE WITH HOVER EFFECT */}
-          <div className="relative flex-1 flex justify-center items-center">
-            <div className="relative group w-[260px] sm:w-[300px] md:w-[420px] lg:w-[480px]">
-
-              {/* Glow Shadow */}
-              <div className="absolute -z-10 inset-0 rounded-xl blur-xl opacity-50 bg-teal-700 group-hover:opacity-70 transition-all duration-500"></div>
-
-              {/* Main Image */}
-              <img
-                src={card}
-                alt="website"
-                className="w-full h-auto rounded-xl shadow-2xl transform rotate-[-6deg]
-                          group-hover:rotate-[-1deg] group-hover:scale-105
-                          transition-all duration-500 ease-out"
-              />
-
-              {/* Hover Border */}
-              <div className="absolute inset-0 rounded-xl group-hover:border border-white/30 transition-all duration-500"></div>
-            </div>
-          </div>
+        {/* ✅ RIGHT IMAGE (same responsive hover style as TwoPage) */}
+        <div className="flex-1 flex justify-end items-center pr-2 md:pr-6 lg:pr-10">
+          <img
+            src={hero3}
+            alt="hero3"
+            className="w-full max-w-[720px] object-contain transition-transform duration-500 hover:scale-105"
+          />
         </div>
       </section>
 
-      {/* ✅ PROJECT COMPONENTS BELOW */}
-
-    
+      {/* ✅ PORTFOLIO COMPONENTS BELOW */}
       <ComplianceSutra />
-          <TradePlus />
-        <AnyService />
+      <TradePlus />    
       <BheemaERP />
+       <Snix />
+       <AnyService/>
+       
+
     </>
   );
 };

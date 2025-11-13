@@ -1,34 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import jobportal from "../assets/job portal.png";
-import canvas from "../assets/Canvas Framer Template - Framer Mobile.mp4";
+import jobportalimage from "../assets/job portal.png";
 
 const JobPortal = () => {
   return (
-    <section className="py-12 px-6 md:px-12 lg:px-24 bg-white">
-      <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-14">
+    <section className="py-16 px-6 md:px-12 lg:px-24 bg-gray-50 flex justify-center items-center">
+      <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 items-center gap-16">
 
-        {/* ✅ LEFT CONTENT */}
-        <div className="flex-1 text-center md:text-left space-y-5">
+        {/* ✅ LEFT: TEXT CONTENT */}
+        <div className="space-y-6 text-center md:text-left w-full order-2 md:order-1">
           <h3 className="text-blue-600 text-lg font-semibold uppercase tracking-wide">
             Smart Online Job Portal
           </h3>
 
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-gray-900">
             Find Jobs, Apply Instantly & Track Applications
           </h1>
 
           <p className="text-gray-600 text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
-            JobPortal ek smart recruitment system jahan candidates login/register
-            karke profile create karte hain, resume upload karte hain aur job listings
-            par direct apply kar sakte hain. Dashboard se application status easily
-            check hota hai.
+            JobPortal is an intelligent recruitment system where candidates can log in or register, 
+            create their profiles, upload resumes, and apply directly to job listings. 
+            With a personalized dashboard, users can easily track their application status 
+            and stay updated on new opportunities.
           </p>
 
           <div className="space-y-2 text-gray-800 text-lg">
             <p>🧾 <span className="font-semibold">Easy Login & Registration</span></p>
             <p>📄 <span className="font-semibold">Resume Upload & Profile Management</span></p>
-            <p>💼 <span className="font-semibold">Apply Directly to Job Listings</span></p>
+            <p>💼 <span className="font-semibold">Direct Job Applications</span></p>
             <p>📊 <span className="font-semibold">Application Tracking & Notifications</span></p>
           </div>
 
@@ -36,48 +35,25 @@ const JobPortal = () => {
             to="https://jobportal.bheemainfotech.in/"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-block px-8 py-3 bg-blue-600 hover:bg-blue-700 
-                       text-white font-semibold rounded-xl shadow-lg 
-                       transition-all duration-300"
+            className="inline-block mt-6 px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl shadow-lg transition-all duration-300"
           >
             Visit Live Project
           </Link>
         </div>
 
-        {/* ✅ RIGHT SIDE */}
-        <div className="flex-1 flex justify-center items-center">
-          <div className="relative flex justify-center items-center
-                          w-full max-w-[480px]
-                          h-[380px] md:h-[550px]">
-
-            {/* ✅ Background Rotating Video */}
-            <video
-              src={canvas}
-              autoPlay
-              muted
-              loop
-              className="
-                absolute 
-                w-[300px] h-[300px]
-                md:w-[460px] md:h-[460px]
-                object-contain
-                opacity-80 animate-spin-slow
-              "
-              style={{ zIndex: 1 }}
-            ></video>
-
-            {/* ✅ Center Image (slightly increased) */}
-            <div className="relative z-10 flex items-center justify-center">
-              <img
-                src={jobportal}
-                alt="Job Portal Logo"
-                className="
-                  w-[250px] h-[200px]          
-                  md:w-[400px] md:h-[300px]    
-                  object-contain
-                "
-              />
-            </div>
+        {/* ✅ RIGHT: IMAGE (Professional Card Design) */}
+        <div className="flex justify-center items-center w-full h-[400px] sm:h-[480px] md:h-[520px] order-1 md:order-2">
+          <div
+            className="bg-white rounded-2xl p-6 flex justify-center items-center border border-gray-100"
+            style={{
+              boxShadow: "0 8px 24px rgba(0,0,0,0.12)", // consistent premium shadow
+            }}
+          >
+            <img
+              src={jobportalimage}
+              alt="Job Portal"
+              className="max-w-full max-h-full object-contain rounded-xl transition-transform duration-500 hover:scale-105"
+            />
           </div>
         </div>
 

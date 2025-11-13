@@ -1,82 +1,52 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import tradepluslogo from "../assets/trade plus.png";
-import canvas from "../assets/Canvas Framer Template - Framer Mobile.mp4";
+import tradeimage from "../assets/trade plus.png";
 
 const TradePlus = () => {
   return (
-    <section className="py-10 px-6 md:px-12 lg:px-24 bg-white flex justify-center">
-      <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12 max-w-7xl w-full">
+    <section className="py-16 px-6 md:px-12 lg:px-24 bg-gray-50 flex justify-center items-center">
+      <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 items-center gap-16">
 
         {/* ✅ LEFT CONTENT */}
-        <div className="flex-1 text-center md:text-left space-y-5">
+        <div className="space-y-6 text-center md:text-left">
           <h3 className="text-green-600 text-lg font-semibold uppercase tracking-wide">
             Stock Trading & Analytics
           </h3>
 
-          <h1 className="text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
             TradePlus – Smart Stock Market Analysis Platform
           </h1>
 
-          <p className="text-gray-600 text-base md:text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
-            TradePlus ek modern stock market platform hai jahan traders live
-            market data, advanced charts, analytics aur strategies ke sath
-            real-time me trade ko analyze kar sakte hain. Beginner se pro tak
-            sab ke liye useful.
+          <p className="text-gray-600 text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
+            TradePlus is a modern stock market platform where traders can analyze
+            live market data, advanced charts, analytics, and trading strategies
+            in real-time. It’s designed to be useful for everyone — from beginners
+            to professional traders.
           </p>
 
-          <div className="space-y-2 text-gray-800 text-base md:text-lg">
-            <p>📈 Real-time Stock Market Data</p>
-            <p>📊 Advanced Chart & Technical Tools</p>
-            <p>💹 Trading Strategies & Analytics</p>
-            <p>⚡ Fast & User-Friendly Dashboard</p>
+          <div className="space-y-2 text-gray-800 text-lg">
+            <p>📈 <span className="font-semibold">Real-time Stock Market Data</span></p>
+            <p>📊 <span className="font-semibold">Advanced Charting & Technical Tools</span></p>
+            <p>💹 <span className="font-semibold">Trading Strategies & Analytics</span></p>
+            <p>⚡ <span className="font-semibold">Fast & User-Friendly Dashboard</span></p>
           </div>
 
-          <Link
-            to="https://trade-plus.vercel.app/"
+          <a
+            href="https://trade-plus.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-8 py-3 bg-blue-600 hover:bg-blue-700
-                       text-white font-semibold rounded-xl shadow-lg 
-                       transition-all duration-300"
+            className="inline-block mt-6 px-8 py-3 bg-blue-600 hover:bg-blue-700 
+                       text-white font-semibold rounded-xl shadow-lg transition-all duration-300"
           >
             Visit Live Project
-          </Link>
+          </a>
         </div>
 
-        {/* ✅ RIGHT SECTION */}
-        <div className="flex-1 relative flex justify-center items-center min-h-[420px] md:min-h-[520px]">
-
-          {/* ✅ Animated Background Video */}
-          <video
-            src={canvas}
-            autoPlay
-            muted
-            loop
-            className="
-              absolute
-              w-[260px] h-[260px]
-              md:w-[440px] md:h-[440px]
-              object-contain
-              opacity-90
-              animate-spin-slow
-              drop-shadow-[0_0_35px_rgba(0,0,0,0.4)]
-              blur-[0.5px]
-            "
-            style={{ zIndex: 1 }}
-          ></video>
-
-          {/* ✅ Center Logo */}
+        {/* ✅ RIGHT IMAGE */}
+        <div className="flex justify-center items-center w-full h-[380px] sm:h-[460px] md:h-[520px]">
           <img
-            src={tradepluslogo}
-            alt="TradePlus Logo"
-            className="
-              relative z-10
-              w-[170px] h-[220px]
-              md:w-[300px] md:h-[380px]
-              object-contain
-              drop-shadow-xl
-            "
+            src={tradeimage}
+            alt="TradePlus"
+            className="w-[95%] h-[95%] object-contain rounded-2xl shadow-lg bg-white p-6"
           />
         </div>
 

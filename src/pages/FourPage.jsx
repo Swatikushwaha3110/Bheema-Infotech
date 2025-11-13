@@ -1,10 +1,10 @@
 import React from "react";
 import card from "../assets/new-banner-img2.png";
-import LootPools from "../components/LootPools";
 import Tripzy from "../components/Tripzy";
 import Snix from "../components/Snix";
 import TradePlus from "../components/TradePlus";
 import JobPortal from "../components/JobPortal";
+import AnyService from "../components/AnyService";
 
 
 const FourthPage = () => {
@@ -59,10 +59,11 @@ const FourthPage = () => {
 
       {/* ✅ PROJECT COMPONENTS BELOW */}
   
-      <LootPools />
-      <Tripzy />
-     <JobPortal/>
-        <Snix/>
+      
+     
+    
+     
+   
    
     </>
   );

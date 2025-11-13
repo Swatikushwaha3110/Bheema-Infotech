@@ -1,18 +1,23 @@
 import React from "react";
-import card2 from "../assets/new-banner-img2.png"; 
 import Selfie from "../components/Selfie";
 import Rooyah from "../components/Rooyah";
-import EasyStore from "../components/EasyStore";
 import ApnaIndoriShop from "../components/ApnaIndoriShop";
+import Housiey from "../components/Housiey";
+import hero2 from "../assets/Images/hero2.png";
+import Tripzy from "../components/Tripzy";
+import EasyStore from "../components/EasyStore";
+import JobPortal from "../components/JobPortal";
+
 
 const TwoPage = () => {
   return (
     <>
-      {/* ✅ HERO SECTION */}
-      <section className="w-full bg-[#03303B] text-white px-6 md:px-12 lg:px-24 py-10 md:py-14 overflow-hidden md:h-[550px] flex items-center">
+      {/* ✅ HERO SECTION (Same like OnePage) */}
+      <section className="w-full bg-[#03303B] text-white px-6 md:px-10 lg:px-16 py-10 md:py-14 overflow-hidden md:h-[550px] flex items-center justify-between">
 
-        {/* ✅ LEFT CONTENT */}
+        {/* ✅ LEFT CONTENT (Same Layout) */}
         <div className="flex flex-col text-center md:text-left max-w-[320px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[550px] z-20">
+          
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold tracking-wide leading-tight text-teal-300">
             We Build Modern Websites
           </h2>
@@ -31,20 +36,14 @@ const TwoPage = () => {
           </button>
         </div>
 
-        {/* ✅ RIGHT IMAGE */}
-        <div className="flex-1 flex justify-center md:justify-end items-center relative">
-          <div className="absolute opacity-25 blur-3xl w-[750px] h-[750px] rounded-full"></div>
-
+        {/* ✅ RIGHT IMAGE (Exact Like OnePage) */}
+        <div className="flex-1 flex justify-end items-center pr-2 md:pr-6 lg:pr-10">
           <img
-            src={card2}
+            src={hero2}
             alt="portfolio-2"
             className="
-              relative z-10
-              w-[420px]
-              sm:w-[520px]
-              md:w-[640px]
-              lg:w-[760px]
-              xl:w-[880px]
+              w-full
+              max-w-[720px]
               object-contain
               transition-transform duration-500 hover:scale-105
             "
@@ -53,10 +52,15 @@ const TwoPage = () => {
       </section>
 
       {/* ✅ Bottom Portfolio Sections */}
-      <EasyStore />
+      
+       <Tripzy />
       <Selfie />
       <ApnaIndoriShop />
       <Rooyah />
+      <Housiey />
+      <EasyStore/>
+        <JobPortal/>
+    
     </>
   );
 };

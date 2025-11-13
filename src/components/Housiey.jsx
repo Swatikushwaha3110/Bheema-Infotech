@@ -1,46 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import housiey from "../assets/HOUSIEY.png";
-import loadervideo from "../assets/loadervideo.mp4";
+import housieyimage from "../assets/HOUSIEY.png";
 
 const Housiey = () => {
   return (
-    <section className="py-12 px-6 md:px-12 lg:px-24 bg-white">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <section className="py-16 px-6 md:px-12 lg:px-24 bg-gray-50 flex justify-center items-center">
+      <div className="max-w-7xl w-full flex flex-col-reverse md:flex-row items-center justify-between gap-14">
 
-        {/* ✅ LEFT - Background Video + Image (Same Style as Kider) */}
-        <div className="flex justify-center">
-          <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md aspect-square overflow-hidden flex items-center justify-center">
-            
-            <video
-              src={loadervideo}
-              autoPlay
-              loop
-              muted
-              className="w-lvw h-lvh scale-110"
-            />
-
-            <img
-              src={housiey}
-              alt="Housiey"
-              className="absolute top-1/2 left-1/2 w-[65%] h-[65%] -translate-x-1/2 -translate-y-1/2 rounded-xl z-10 object-contain"
-            />
-          </div>
-        </div>
-
-        {/* ✅ RIGHT CONTENT */}
-        <div className="text-center md:text-left space-y-5">
+        {/* ✅ LEFT SIDE: TEXT CONTENT */}
+        <div className="flex-1 text-center md:text-left space-y-6">
           <h3 className="text-blue-600 text-lg font-semibold uppercase tracking-wide">
             Verified Homes. Smart Buying.
           </h3>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
             Housiey – Mumbai Real Estate Buying Platform
           </h1>
 
-          <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
+          <p className="text-gray-600 text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
             Housiey helps home buyers discover verified properties in Mumbai with
-            transparent pricing, zero brokerage, expert assistance and real-time updates.
+            transparent pricing, zero brokerage, expert assistance, and real-time updates.
             A trusted platform for buying homes with confidence.
           </p>
 
@@ -54,12 +33,28 @@ const Housiey = () => {
           <Link
             to="https://housiey.com/mumbai-real-estate"
             target="_blank"
-            className="mt-6 inline-block px-8 py-3 bg-blue-600 hover:bg-blue-700
-                       text-white font-semibold rounded-xl shadow-lg
-                       transition-all duration-300"
+            rel="noopener noreferrer"
+            className="inline-block mt-6 px-8 py-3 bg-blue-600 hover:bg-blue-700 
+                       text-white font-semibold rounded-xl shadow-lg transition-all duration-300"
           >
             Visit Live Project
           </Link>
+        </div>
+
+        {/* ✅ RIGHT SIDE: IMAGE (Professional Card Design) */}
+        <div className="flex-1 flex justify-center items-center w-full h-[400px] sm:h-[480px] md:h-[520px]">
+          <div
+            className="bg-white rounded-2xl p-6 flex justify-center items-center border border-gray-100"
+            style={{
+              boxShadow: "0 8px 24px rgba(0,0,0,0.12)", // consistent premium shadow
+            }}
+          >
+            <img
+              src={housieyimage}
+              alt="Housiey"
+              className="max-w-full max-h-full object-contain rounded-xl transition-transform duration-500 hover:scale-105"
+            />
+          </div>
         </div>
 
       </div>

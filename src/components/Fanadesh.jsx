@@ -1,14 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import loader from "../assets/loadervideo.mp4";   // ✅ background animated video
-import fanadeshImg from "../assets/Images/19fanadesh.png"; // ✅ event website image (change path if needed)
+import fanadeshImg from "../assets/Images/19fanadesh.png";
 
 const Fanadesh = () => {
   return (
     <section className="py-12 px-6 md:px-12 lg:px-24 bg-white">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-        {/* ✅ LEFT CONTENT (No changes) */}
+        {/* ✅ LEFT CONTENT */}
         <div className="text-center md:text-left space-y-5">
           <h3 className="text-orange-600 text-lg font-semibold uppercase tracking-wide">
             Smart Festival & Ticket Booking
@@ -43,27 +42,14 @@ const Fanadesh = () => {
           </Link>
         </div>
 
-        {/* ✅ RIGHT SIDE - Same design as KidKinder & OneSchool */}
-        <div className="flex justify-center md:justify-end">
-          <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md aspect-square overflow-hidden flex items-center justify-center">
-
-            {/* ✅ Background video (loop, muted, autoplay) */}
-            <video
-              src={loader}
-              autoPlay
-              loop
-              muted
-              className="w-lvw h-lvh scale-110"
-            />
-
-            {/* ✅ Center Image inside video */}
-            <img
-              src={fanadeshImg}
-              alt="Fanadesh"
-              className="absolute top-1/2 left-1/2 w-[65%] h-[65%] -translate-x-1/2 -translate-y-1/2 rounded-xl z-10"
-            />
-          </div>
-        </div>
+        {/* ✅ RIGHT SIDE - Only Image */}
+   <div className="flex justify-center items-center w-full h-[380px] sm:h-[460px] md:h-[520px] overflow-visible">
+  <img
+    src={fanadeshImg}
+    alt="Fanadesh"
+    className="w-[95%] h-[95%] object-contain rounded-2xl shadow-lg"
+  />
+</div>
 
       </div>
     </section>
