@@ -17,12 +17,12 @@ import NonItPage from "./pages/NonitPage";
 import ApplyIt from "./pages/ApplyIt";
 import ApplyNonIt from "./pages/ApplyNonIt";
 import ApplyInternShip from "./pages/ApplyInternShip";
-import ScrollToTop from "./components/strollToTop";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <Router>
-      <ScrollToTop/>
+      <ScrollToTop  />
         <Navbar/>
        <Routes>
          <Route path="/"element={<Home />}/>
