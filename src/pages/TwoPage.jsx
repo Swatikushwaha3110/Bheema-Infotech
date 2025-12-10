@@ -7,6 +7,7 @@ import hero2 from "../assets/Images/hero2.png";
 import Tripzy from "../components/Tripzy";
 import EasyStore from "../components/EasyStore";
 import JobPortal from "../components/JobPortal";
+import { Link } from "react-router-dom";
 
 
 const TwoPage = () => {
@@ -30,10 +31,13 @@ const TwoPage = () => {
             From powerful UI to smooth performance — we create websites that
             boost conversions and help your business grow faster.
           </p>
-
-          <button className="mt-6 bg-yellow-500 hover:bg-yellow-600 active:scale-95 transition-all text-white font-semibold w-[220px] py-3 rounded-md text-base sm:text-lg mx-auto md:mx-0">
-            Explore Our Services
-          </button>
+          <Link to="/contact"
+  className="inline-block mt-6 bg-red-600 hover:bg-red-700 active:scale-95 
+             transition-all duration-200 text-white font-semibold 
+             w-[220px] py-3 rounded-lg text-base sm:text-lg 
+             text-center shadow-md hover:shadow-lg"
+>   Explore Our Services
+</Link>
         </div>
 
         {/* ✅ RIGHT IMAGE (Exact Like OnePage) */}

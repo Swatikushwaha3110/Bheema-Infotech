@@ -24,7 +24,6 @@ const Contact = () => {
     setErrorMsg("");
 
     try {
-      // Convert form data to URL parameters (like FormData + URLSearchParams)
       const params = new URLSearchParams(formData);
 
       const response = await fetch(
@@ -64,8 +63,11 @@ const Contact = () => {
 
       {/* Contact Section */}
       <section className="container mx-auto px-6 md:px-12 lg:px-24 grid md:grid-cols-2 gap-12">
+        
         {/* Contact Info */}
         <div className="space-y-6">
+
+          {/* Location */}
           <div className="group bg-white p-8 rounded-xl shadow hover:shadow-xl transition duration-300 flex items-center gap-6">
             <MdLocationOn className="text-blue-600 text-4xl transition duration-300 group-hover:text-blue-700" />
             <div>
@@ -73,22 +75,36 @@ const Contact = () => {
                 Location
               </h3>
               <p className="text-gray-700">
-                302 A, Rajat Complex, 18, Kibe Compound, Madhumilan Square, In
-                Front of Dawa Bazar, Indore, Madhya Pradesh 452001
+                <a
+                  href="https://maps.app.goo.gl/qkJq8S5hYUNYaCkg6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline"
+                >
+                  302 A, Rajat Complex, 18, Kibe Compound, Madhumilan Square,
+                  In Front of Dawa Bazar, Indore, Madhya Pradesh 452001
+                </a>
               </p>
             </div>
           </div>
 
+          {/* Email */}
           <div className="group bg-white p-8 rounded-xl shadow hover:shadow-xl transition duration-300 flex items-center gap-6">
             <MdEmail className="text-blue-600 text-4xl transition duration-300 group-hover:text-blue-700" />
             <div>
               <h3 className="text-2xl font-semibold mb-2 text-blue-900">
                 Email
               </h3>
-              <p className="text-gray-700">bheemainfotech@gmail.com</p>
+              <a
+                href="mailto:bheemainfotech@gmail.com"
+                className="text-blue-600 hover:underline"
+              >
+                bheemainfotech@gmail.com
+              </a>
             </div>
           </div>
 
+          {/* Phone */}
           <div className="group bg-white p-8 rounded-xl shadow hover:shadow-xl transition duration-300 flex items-center gap-6">
             <MdPhone className="text-blue-600 text-4xl transition duration-300 group-hover:text-blue-700" />
             <div>
@@ -105,6 +121,8 @@ const Contact = () => {
         {/* Contact Form */}
         <div className="bg-white p-8 rounded-xl shadow-xl">
           <form className="space-y-6" onSubmit={handleSubmit}>
+            
+            {/* Name */}
             <div>
               <label className="block mb-2 font-medium text-gray-700">
                 Name
@@ -120,6 +138,7 @@ const Contact = () => {
               />
             </div>
 
+            {/* Email */}
             <div>
               <label className="block mb-2 font-medium text-gray-700">
                 Email
@@ -135,6 +154,7 @@ const Contact = () => {
               />
             </div>
 
+            {/* Subject */}
             <div>
               <label className="block mb-2 font-medium text-gray-700">
                 Subject
@@ -150,6 +170,7 @@ const Contact = () => {
               />
             </div>
 
+            {/* Message */}
             <div>
               <label className="block mb-2 font-medium text-gray-700">
                 Message
@@ -165,6 +186,7 @@ const Contact = () => {
               ></textarea>
             </div>
 
+            {/* Submit Button */}
             <button
               type="submit"
               disabled={loading}
@@ -177,7 +199,7 @@ const Contact = () => {
               {loading ? "Sending..." : "Send Message"}
             </button>
 
-            {/* Success & Error Messages */}
+            {/* Success Error Message */}
             {successMsg && (
               <p className="mt-4 text-center text-green-600 font-medium">
                 {successMsg}

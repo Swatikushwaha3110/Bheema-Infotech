@@ -7,6 +7,7 @@ import TradePlus from "../components/TradePlus";
 import JobPortal from "../components/JobPortal";
 import Snix from "../components/Snix";
 import Tripzy from "../components/Tripzy";
+import { Link } from "react-router-dom";
 
 const ThirdPage = () => {
   return (
@@ -28,10 +29,14 @@ const ThirdPage = () => {
             We design and develop responsive, modern, and creative websites
             that increase customer engagement and help your business grow faster.
           </p>
-
-          <button className="mt-6 bg-blue-600 hover:bg-blue-700 active:scale-95 transition-all text-white font-semibold w-[240px] py-3 rounded-md text-base sm:text-lg mx-auto md:mx-0">
-            Let’s Build Your Project
-          </button>
+           <Link to="/contact"
+  className="inline-block mt-6 bg-red-600 hover:bg-red-700 active:scale-95 
+             transition-all duration-200 text-white font-semibold 
+             w-[220px] py-3 rounded-lg text-base sm:text-lg 
+             text-center shadow-md hover:shadow-lg"
+>
+  Let’s Build Your Project
+</Link>
         </div>
 
         {/* ✅ RIGHT IMAGE (same responsive hover style as TwoPage) */}

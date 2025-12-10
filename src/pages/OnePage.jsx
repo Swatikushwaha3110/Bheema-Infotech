@@ -8,6 +8,7 @@ import Kider from "../components/Kider";
 import hero1 from "../assets/Images/hero1.png";
 import EasyStore from "../components/EasyStore";
 import AnyService from "../components/AnyService";
+import { Link } from "react-router-dom";
 
 const OnePage = () => {
   return (
@@ -30,9 +31,16 @@ const OnePage = () => {
             remarkable services! Have a look at our previous work...
           </p>
 
-          <button className="mt-6 bg-red-600 hover:bg-red-700 active:scale-95 transition-all text-white font-semibold w-[220px] py-3 rounded-md text-base sm:text-lg mx-auto md:mx-0">
-            Request A Free Quote !
-          </button>
+     <Link
+  to="/contact"
+  className="inline-block mt-6 bg-red-600 hover:bg-red-700 active:scale-95 
+             transition-all duration-200 text-white font-semibold 
+             w-[220px] py-3 rounded-lg text-base sm:text-lg 
+             text-center shadow-md hover:shadow-lg"
+>
+  Request A Free Quote!
+</Link>
+
         </div>
 
         {/* ✅ RIGHT IMAGE (Perfect Responsive Fit + Side Gap) */}

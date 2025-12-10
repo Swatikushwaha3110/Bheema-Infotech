@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -10,18 +11,10 @@ const Footer = () => {
         <div className="md:col-span-2">
           <h4 className="font-bold mb-4">Useful Links</h4>
           <ul className="space-y-2">
-         <li>
-           <a href="/hero" className="hover:text-blue-400 transition">Home</a>
-         </li>
-            <li>
-              <Link to="/about" className="hover:text-blue-400 transition">About</Link>
-            </li>
-
-            <li>
-              <Link to="/services" className="hover:text-blue-400 transition">Services</Link>
-            </li>
-
-              </ul>
+            <li><Link to="/" className="hover:text-blue-400 transition">Home</Link></li>
+            <li><Link to="/about" className="hover:text-blue-400 transition">About</Link></li>
+            <li><Link to="/services" className="hover:text-blue-400 transition">Services</Link></li>
+          </ul>
         </div>
 
         {/* Our Services */}
@@ -39,21 +32,78 @@ const Footer = () => {
         {/* Contact Us */}
         <div className="md:col-span-4">
           <h4 className="font-bold mb-4">Contact Us</h4>
-          <p>302 A, Rajat Complex, Kibe Compound, Indore, MP 452001</p>
-          <p>Phone: +91-8770775732, +91-9770362377</p>
-          <p>Email: bheemainfotech@gmail.com</p>
+
+          {/* Map Link */}
+          <p className="text-gray-300">
+            <a
+              href="https://maps.app.goo.gl/qkJq8S5hYUNYaCkg6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:underline"
+            >
+              302 A, Rajat Complex, Kibe Compound, Indore, MP 452001
+            </a>
+          </p>
+
+          <p className="mt-2">Phone: +91-8770775732, +91-9770362377</p>
+
+          {/* Gmail Link */}
+          <p className="mt-2">
+            <a
+              href="mailto:bheemainfotech@gmail.com"
+              className="text-blue-400 hover:underline"
+            >
+              bheemainfotech@gmail.com
+            </a>
+          </p>
         </div>
 
         {/* About */}
         <div className="md:col-span-4">
           <h4 className="font-bold mb-4">About Bheema Infotech</h4>
-          <p>Bheema Infotech is an IT Firm located in Central India, providing complete IT solutions.</p>
+          <p className="text-gray-300">
+            Bheema Infotech is an IT Firm located in Central India, providing complete IT solutions.
+          </p>
 
-          <div className="flex gap-4 mt-3">
-            <a href="#" className="hover:text-blue-400 transition">Twitter</a>
-            <a href="#" className="hover:text-blue-400 transition">Facebook</a>
-            <a href="#" className="hover:text-blue-400 transition">Instagram</a>
-            <a href="#" className="hover:text-blue-400 transition">LinkedIn</a>
+          {/* Social Icons */}
+          <div className="flex gap-4 mt-4">
+
+            <a
+              href="https://x.com/BheemaInfotech"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-400 transition"
+            >
+              <FaTwitter size={24} />
+            </a>
+
+            <a
+              href="https://www.facebook.com/people/Bheema-Infotech/61568097399953/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-400 transition"
+            >
+              <FaFacebookF size={24} />
+            </a>
+
+            <a
+              href="https://www.instagram.com/bheemainfotech2024/?hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-pink-400 transition"
+            >
+              <FaInstagram size={24} />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/company/bheema-infotech/posts/?feedView=all"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-400 transition"
+            >
+              <FaLinkedinIn size={24} />
+            </a>
+
           </div>
         </div>
       </div>
