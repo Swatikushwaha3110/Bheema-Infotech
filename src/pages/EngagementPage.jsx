@@ -100,12 +100,11 @@ const Engagement = () => {
             Contact us today and let our experts help you choose the best
             engagement model for your project.
           </p>
-          <a
-            href="#contact"
+          <Link to="/contact"
             className="inline-block bg-yellow-400 text-gray-900 px-8 sm:px-12 py-3 sm:py-4 rounded-xl font-bold hover:bg-yellow-300 transition duration-300"
           >
             Get In Touch
-          </a>
+          </Link>
         </div>
       </section>
     </div>

@@ -1,19 +1,27 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white py-12">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 px-6">
+
         {/* Useful Links */}
         <div className="md:col-span-2">
           <h4 className="font-bold mb-4">Useful Links</h4>
           <ul className="space-y-2">
-            <li><a href="#hero" className="hover:text-blue-400 transition">Home</a></li>
-            <li><a href="#why-us" className="hover:text-blue-400 transition">About</a></li>
-            <li><a href="#services" className="hover:text-blue-400 transition">Services</a></li>
-            <li><a href="#" className="hover:text-blue-400 transition">Terms of service</a></li>
-            <li><a href="#" className="hover:text-blue-400 transition">Privacy policy</a></li>
-          </ul>
+         <li>
+           <a href="/hero" className="hover:text-blue-400 transition">Home</a>
+         </li>
+            <li>
+              <Link to="/about" className="hover:text-blue-400 transition">About</Link>
+            </li>
+
+            <li>
+              <Link to="/services" className="hover:text-blue-400 transition">Services</Link>
+            </li>
+
+              </ul>
         </div>
 
         {/* Our Services */}
@@ -40,6 +48,7 @@ const Footer = () => {
         <div className="md:col-span-4">
           <h4 className="font-bold mb-4">About Bheema Infotech</h4>
           <p>Bheema Infotech is an IT Firm located in Central India, providing complete IT solutions.</p>
+
           <div className="flex gap-4 mt-3">
             <a href="#" className="hover:text-blue-400 transition">Twitter</a>
             <a href="#" className="hover:text-blue-400 transition">Facebook</a>

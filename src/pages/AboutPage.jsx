@@ -144,12 +144,11 @@ const About = () => {
               Our team continuously innovates to provide top-tier digital solutions that empower
               businesses globally.
             </p>
-            <a
-              href="#contact"
+            <Link to="/contact"
               className="inline-block bg-blue-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-yellow-400 hover:text-gray-900 transition"
             >
               Talk to Our Experts
-            </a>
+            </Link>
           </div>
         </div>
       </section>

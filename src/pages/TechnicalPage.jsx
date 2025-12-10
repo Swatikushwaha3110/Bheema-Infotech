@@ -30,6 +30,7 @@ import icon28 from "../assets/icons/ror.png";
 import icon29 from "../assets/icons/tailwindcss.png";
 import icon30 from "../assets/icons/wordpress.png";
 import icon31 from "../assets/icons/magento.png";
+import { Link } from "react-router-dom";
 
 // === ALL ICONS ARRAY ===
 const allStacks = [
@@ -95,12 +96,11 @@ const TechnicalStack = () => {
         <p className="text-gray-700 mb-8">
           Contact us today to learn how we can implement these technologies for your project.
         </p>
-        <a
-          href="#contact"
+        <Link to="/contact"
           className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-600 transition"
         >
           Get In Touch
-        </a>
+        </Link>
       </section>
     </div>
   );
