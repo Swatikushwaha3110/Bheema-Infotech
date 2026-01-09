@@ -10,14 +10,15 @@ import TechnicalPage from "./pages/TechnicalPage";
 import PortfolioPage from "./pages/PortfolioPage";
 import ContactPage from "./pages/ContactPage";
 import BlogPage from "./pages/BlogPage";
-import CareersPage from "./pages/CareersPage";
-import ItPage from "./pages/ItPage";
-import InternshipPage from "./pages/InternshipPage";
-import NonItPage from "./pages/NonitPage";
-import ApplyIt from "./pages/ApplyIt";
-import ApplyNonIt from "./pages/ApplyNonIt";
-import ApplyInternShip from "./pages/ApplyInternShip";
+// import CareersPage from "./pages/CareersPage";
+// import ItPage from "./pages/ItPage";
+// import InternshipPage from "./pages/InternshipPage";
+// import NonItPage from "./pages/NonitPage";
+// import ApplyIt from "./pages/ApplyIt";
+// import ApplyNonIt from "./pages/ApplyNonIt";
+// import ApplyInternShip from "./pages/ApplyInternShip";
 import ScrollToTop from "./components/ScrollToTop";
+import Internship from "./pages/Internship";
 
 function App() {
   return (
@@ -34,14 +35,14 @@ function App() {
          <Route path="/portfolio/:pageId"element={<PortfolioPage/>}/>
          <Route path="/contact"element={<ContactPage/>}/>
          <Route path="/blog"element={<BlogPage/>}/>
-         <Route path="/careers" element={<CareersPage />} />
-        <Route path="/careers/:filter" element={<CareersPage />} />
+         <Route path="/internship" element={<Internship />} />
+        {/* <Route path="/careers/:filter" element={<CareersPage />} />
          <Route path="/it"element={<ItPage/>}/>
          <Route path="/nonit"element={<NonItPage/>}/>
-         <Route path="/internship"element={<InternshipPage/>}/>
-         <Route path="/apply/it" element={<ApplyIt />} />
+         <Route path="/internship"element={<InternshipPage/>}/> */}
+         {/* <Route path="/apply/it" element={<ApplyIt />} />
          <Route path="/apply/nonit" element={<ApplyNonIt />} />
-         <Route path="/apply/internship" element={<ApplyInternShip/>} />
+         <Route path="/apply/internship" element={<ApplyInternShip/>} /> */}
 
        </Routes>
        <Footer/>

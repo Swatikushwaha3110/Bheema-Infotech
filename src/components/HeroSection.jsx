@@ -26,7 +26,7 @@ const HeroSection = () => {
 
   <div className="relative group w-[300px] md:w-[420px]">
     {/* Card Shadow Behind */}
-    <div className="absolute -z-10 inset-0 rounded-xl blur-xl opacity-50 bg-teal-700 group-hover:opacity-70 transition-all duration-500"></div>
+    {/* <div className="absolute -z-10 inset-0 rounded-xl blur- xl opacity-50 bg-teal-700 group-hover:opacity-70 transition-all duration-500"></div> */}
 
     {/* Actual Image */}
     <img 

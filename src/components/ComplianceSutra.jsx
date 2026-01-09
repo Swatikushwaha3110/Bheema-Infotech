@@ -4,19 +4,45 @@ import complianceimage from "../assets/COMPLIANCE.png";
 
 const ComplianceSutra = () => {
   return (
-    <section className="py-16 px-6 md:px-12 lg:px-24 bg-gray-50 flex justify-center items-center">
+    <section className="py-16 px-6 md:px-12 lg:px-24 bg-gray-50 flex justify-center">
       <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 items-center gap-16">
 
-        {/* ✅ LEFT: IMAGE (same style as OneSchool) */}
-        <div className="flex justify-center items-center w-full h-[380px] sm:h-[460px] md:h-[520px]">
-          <img
-            src={complianceimage}
-            alt="ComplianceSutra"
-            className="w-[95%] h-[95%] object-contain rounded-2xl shadow-lg"
-          />
+        {/* LEFT IMAGE (Border + Animation) */}
+        <div className="flex justify-center">
+          <div
+            className="
+              group
+              w-full
+              max-w-lg
+              aspect-video
+              rounded-2xl
+              p-[2px]
+              bg-gradient-to-r from-cyan-500 via-teal-500 to-blue-500
+              shadow-xl
+              transition-all
+              duration-500
+              hover:-translate-y-2
+              hover:shadow-2xl
+            "
+          >
+            <div className="w-full h-full bg-white rounded-2xl flex items-center justify-center overflow-hidden">
+              <img
+                src={complianceimage}
+                alt="ComplianceSutra Platform Preview"
+                className="
+                  w-full
+                  h-full
+                  object-contain
+                  transition-transform
+                  duration-500
+                  group-hover:scale-105
+                "
+              />
+            </div>
+          </div>
         </div>
 
-        {/* ✅ RIGHT: TEXT CONTENT (OneSchool style) */}
+        {/* RIGHT CONTENT */}
         <div className="space-y-6 text-center md:text-left w-full">
           <h3 className="text-cyan-600 text-lg font-semibold uppercase tracking-wide">
             ComplianceSutra • GST & Tax Compliance
@@ -39,15 +65,30 @@ const ComplianceSutra = () => {
             <p>📈 <span className="font-semibold">Business-friendly Dashboard</span></p>
           </div>
 
-          <Link
-            to="https://compliancesutra.vercel.app/"
+          <a
+            href="https://compliancesutra.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block mt-6 px-8 py-3 bg-cyan-600 hover:bg-cyan-700 text-white font-semibold rounded-xl shadow-lg transition-all duration-300"
+            className="
+              inline-block
+              mt-6
+              px-8
+              py-3
+              bg-cyan-600
+              hover:bg-cyan-700
+              text-white
+              font-semibold
+              rounded-xl
+              shadow-lg
+              transition-all
+              duration-300
+              hover:scale-105
+            "
           >
             Visit Live Project
-          </Link>
+          </a>
         </div>
+
       </div>
     </section>
   );

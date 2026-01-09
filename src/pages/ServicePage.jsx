@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import { FaCode, FaUsersCog } from "react-icons/fa";
 import {
   MdOutlineBusinessCenter,
@@ -94,6 +95,7 @@ const Services = () => {
           ))}
         </div>
       </section>
+   
 
       {/* CTA Section */}
       <section className="py-20 text-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white">

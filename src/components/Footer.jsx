@@ -34,12 +34,13 @@ const Footer = () => {
           <h4 className="font-bold mb-4">Contact Us</h4>
 
           {/* Map Link */}
-          <p className="text-gray-300">
+          <p className="
+          hover:text-blue-400 text-gray-300">
             <a
               href="https://maps.app.goo.gl/qkJq8S5hYUNYaCkg6"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-400 hover:underline"
+              className=" hover:underline"
             >
               302 A, Rajat Complex, Kibe Compound, Indore, MP 452001
             </a>
@@ -51,7 +52,7 @@ const Footer = () => {
           <p className="mt-2">
             <a
               href="mailto:bheemainfotech@gmail.com"
-              className="text-blue-400 hover:underline"
+              className="hover:text-blue-400 hover:underline"
             >
               bheemainfotech@gmail.com
             </a>

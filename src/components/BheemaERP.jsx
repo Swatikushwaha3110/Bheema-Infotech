@@ -4,19 +4,45 @@ import erpimage from "../assets/Images/1erp.png";
 
 const BheemaERP = () => {
   return (
-    <section className="py-16 px-6 md:px-12 lg:px-24 bg-gray-50 flex justify-center items-center">
+    <section className="py-16 px-6 md:px-12 lg:px-24 bg-gray-50 flex justify-center">
       <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 items-center gap-16">
 
-        {/* ✅ LEFT: IMAGE */}
-        <div className="flex justify-center items-center w-full h-[380px] sm:h-[460px] md:h-[520px] bg-white rounded-2xl shadow-lg overflow-hidden">
-          <img
-            src={erpimage}
-            alt="Bheema ERP System"
-            className="w-[95%] h-[95%] object-contain"
-          />
+        {/* LEFT IMAGE (Border + Animation) */}
+        <div className="flex justify-center">
+          <div
+            className="
+              group
+              w-full
+              max-w-lg
+              aspect-video
+              rounded-2xl
+              p-[2px]
+              bg-gradient-to-r from-blue-600 via-indigo-600 to-slate-600
+              shadow-xl
+              transition-all
+              duration-500
+              hover:-translate-y-2
+              hover:shadow-2xl
+            "
+          >
+            <div className="w-full h-full bg-white rounded-2xl flex items-center justify-center overflow-hidden">
+              <img
+                src={erpimage}
+                alt="Bheema ERP System Preview"
+                className="
+                  w-full
+                  h-full
+                  object-contain
+                  transition-transform
+                  duration-500
+                  group-hover:scale-105
+                "
+              />
+            </div>
+          </div>
         </div>
 
-        {/* ✅ RIGHT: TEXT CONTENT */}
+        {/* RIGHT CONTENT */}
         <div className="space-y-6 text-center md:text-left w-full">
           <h3 className="text-blue-600 text-lg font-semibold uppercase tracking-wide">
             BheemaERP • Business ERP & Management System
@@ -27,9 +53,9 @@ const BheemaERP = () => {
           </h1>
 
           <p className="text-gray-600 text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
-            Bheema ERP is a comprehensive business management software that includes 
-            powerful modules like billing, inventory, staff management, attendance, 
-            reporting, and analytics. It’s a perfect cloud-based solution designed to 
+            Bheema ERP is a comprehensive business management software that includes
+            powerful modules like billing, inventory, staff management, attendance,
+            reporting, and analytics. It’s a perfect cloud-based solution designed to
             automate and streamline business operations efficiently.
           </p>
 
@@ -40,14 +66,28 @@ const BheemaERP = () => {
             <p>📊 <span className="font-semibold">Real-time Reports & Analytics</span></p>
           </div>
 
-          <Link
-            to="https://erp.bheemainfotech.in/"
+          <a
+            href="https://erp.bheemainfotech.in/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block mt-6 px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl shadow-lg transition-all duration-300"
+            className="
+              inline-block
+              mt-6
+              px-8
+              py-3
+              bg-blue-600
+              hover:bg-blue-700
+              text-white
+              font-semibold
+              rounded-xl
+              shadow-lg
+              transition-all
+              duration-300
+              hover:scale-105
+            "
           >
             Visit Live Project
-          </Link>
+          </a>
         </div>
 
       </div>

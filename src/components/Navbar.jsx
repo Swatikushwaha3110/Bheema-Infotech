@@ -13,9 +13,9 @@ const Navbar = () => {
         <div className="container mx-auto flex justify-between items-center px-6 py-4">
           {/* Logo */}
           <div className="text-2xl font-bold flex gap-2">
-            <Link to="/"> <img className="" src={logo}alt="Logo" /> </Link>
+            <Link to="/"> <img className="" src={logo} alt="Logo" /> </Link>
             <Link to="/" className="text-3xl flex items-center gap-2 transition">
-           Bheema<span className="text-blue-400">Infotech</span>  
+              Bheema<span className="text-blue-400">Infotech</span>
             </Link>
           </div>
 
@@ -23,9 +23,8 @@ const Navbar = () => {
           <div className="hidden md:flex space-x-6 items-center">
             <Link
               to="/"
-              className={`relative px-1 py-2 hover:text-blue-400 transition ${
-                location.pathname === "/" ? "text-orange-400" : ""
-              }`}
+              className={`relative px-1 py-2 hover:text-blue-400 transition ${location.pathname === "/" ? "text-orange-400" : ""
+                }`}
             >
               Home
               {location.pathname === "/" && (
@@ -35,9 +34,8 @@ const Navbar = () => {
 
             <Link
               to="/about"
-              className={`relative px-1 py-2 hover:text-blue-400 transition ${
-                location.pathname === "/about" ? "text-orange-400" : ""
-              }`}
+              className={`relative px-1 py-2 hover:text-blue-400 transition ${location.pathname === "/about" ? "text-orange-400" : ""
+                }`}
             >
               About
               {location.pathname === "/about" && (
@@ -47,9 +45,8 @@ const Navbar = () => {
 
             <Link
               to="/services"
-              className={`relative px-1 py-2 hover:text-blue-400 transition ${
-                location.pathname === "/services" ? "text-orange-400" : ""
-              }`}
+              className={`relative px-1 py-2 hover:text-blue-400 transition ${location.pathname === "/services" ? "text-orange-400" : ""
+                }`}
             >
               Services
               {location.pathname === "/services" && (
@@ -59,9 +56,8 @@ const Navbar = () => {
 
             <Link
               to="/engagement"
-              className={`relative px-1 py-2 hover:text-blue-400 transition ${
-                location.pathname === "/engagement" ? "text-orange-400" : ""
-              }`}
+              className={`relative px-1 py-2 hover:text-blue-400 transition ${location.pathname === "/engagement" ? "text-orange-400" : ""
+                }`}
             >
               Engagement
               {location.pathname === "/engagement" && (
@@ -71,9 +67,8 @@ const Navbar = () => {
 
             <Link
               to="/technicalstack"
-              className={`relative px-1 py-2 hover:text-blue-400 transition ${
-                location.pathname === "/technicalstack" ? "text-orange-400" : ""
-              }`}
+              className={`relative px-1 py-2 hover:text-blue-400 transition ${location.pathname === "/technicalstack" ? "text-orange-400" : ""
+                }`}
             >
               Technical Stack
               {location.pathname === "/technicalstack" && (
@@ -83,9 +78,8 @@ const Navbar = () => {
 
             <Link
               to="/portfolio"
-              className={`relative px-1 py-2 hover:text-blue-400 transition ${
-                location.pathname === "/portfolio" ? "text-orange-400" : ""
-              }`}
+              className={`relative px-1 py-2 hover:text-blue-400 transition ${location.pathname === "/portfolio" ? "text-orange-400" : ""
+                }`}
             >
               Portfolio
               {location.pathname === "/portfolio" && (
@@ -95,9 +89,8 @@ const Navbar = () => {
 
             <Link
               to="/blog"
-              className={`relative px-1 py-2 hover:text-blue-400 transition ${
-                location.pathname === "/blog" ? "text-orange-400" : ""
-              }`}
+              className={`relative px-1 py-2 hover:text-blue-400 transition ${location.pathname === "/blog" ? "text-orange-400" : ""
+                }`}
             >
               Blog
               {location.pathname === "/blog" && (
@@ -106,22 +99,20 @@ const Navbar = () => {
             </Link>
 
             <Link
-              to="/careers"
-              className={`relative px-1 py-2 hover:text-blue-400 transition ${
-                location.pathname === "/careers" ? "text-orange-400" : ""
-              }`}
+              to="/internship"
+              className={`relative px-1 py-2 hover:text-blue-400 transition ${location.pathname === "/internship" ? "text-orange-400" : ""
+                }`}
             >
-              Careers
-              {location.pathname === "/careers" && (
+              Internship
+              {location.pathname === "/internship" && (
                 <span className="absolute left-0 bottom-0 w-full h-1 bg-orange-400 rounded-full"></span>
               )}
             </Link>
 
             <Link
               to="/contact"
-              className={`relative px-1 py-2 hover:text-blue-400 transition ${
-                location.pathname === "/contact" ? "text-orange-400" : ""
-              }`}
+              className={`relative px-1 py-2 hover:text-blue-400 transition ${location.pathname === "/contact" ? "text-orange-400" : ""
+                }`}
             >
               Contact
               {location.pathname === "/contact" && (
@@ -144,23 +135,35 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden bg-blue-900 px-6 py-4 flex flex-col space-y-2">
-            {["/","/about","/services","/engagement","/technicalstack","/portfolio","/blog","/careers","/contact"].map((path, idx) => (
+            {[
+              { path: "/", label: "Home" },
+              { path: "/about", label: "About" },
+              { path: "/services", label: "Services" },
+              { path: "/engagement", label: "Engagement" },
+              { path: "/technicalstack", label: "Technical Stack" },
+              { path: "/portfolio", label: "Portfolio" },
+              { path: "/blog", label: "Blog" },
+              { path: "/internship", label: "Internship" },
+              { path: "/contact", label: "Contact" },
+            ].map((item, idx) => (
               <Link
                 key={idx}
-                to={path}
+                to={item.path}
                 onClick={() => setIsOpen(false)}
-                className={`relative py-2 hover:text-blue-400 transition ${
-                  location.pathname === path ? "text-orange-400" : ""
-                }`}
+                className={`relative py-2 hover:text-blue-400 transition ${location.pathname === item.path ? 
+                  "text-orange-400" : ""
+                  }`}
               >
-                {path.replace("/","").charAt(0).toUpperCase() + path.replace("/","").slice(1)}
-                {location.pathname === path && (
-                  <span className="absolute left-0 bottom-0 w-full h-1 bg-orange-400 rounded-full"></span>
+                {item.label}
+
+                {location.pathname === item.path && (
+                  <span className="absolute left-0 bottom-0 w-20 h-1 bg-orange-400 rounded-full"></span>
                 )}
               </Link>
             ))}
           </div>
         )}
+
       </nav>
     </>
   );
